@@ -28,7 +28,7 @@
     "url": "https://github.com/sukisu-ultra/sukisu-ultra/issues"
   },
   "devDependencies": {
-    "vitepress": "^2.0.0-alpha.9"
+    "vitepress": "^2.0.0-alpha.9",
     "markdown-it-mathjax3": "^4.3.2"
   },
   "engines": {
