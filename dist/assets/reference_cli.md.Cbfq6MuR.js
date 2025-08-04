@@ -1,0 +1,1 @@
+import{_ as e,c as r,o as t}from"./chunks/framework.tO6X745Q.js";const a=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"reference/cli.md","filePath":"reference/cli.md","lastUpdated":null}');const n=e({name:"reference/cli.md"},[["render",function(e,a,n,c,s,i){return t(),r("div")}]]);export{a as __pageData,n as default};

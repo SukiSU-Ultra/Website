@@ -8,8 +8,13 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "docs:build-and-preview": "pnpm run docs:build && pnpm run docs:preview",
+    "build": "pnpm run docs:build",
+    "dev": "pnpm run docs:dev",
+    "preview": "pnpm run docs:preview",
     "lint": "echo 'No linting configured'",
-    "type-check": "echo 'No type checking configured'"
+    "type-check": "echo 'No type checking configured'",
+    "optimize": "pnpm run docs:build && pnpm run analyze:bundle",
+    "analyze:bundle": "npx vite-bundle-analyzer docs/.vitepress/dist/assets"
   },
   "keywords": [
     "android",
@@ -28,12 +33,12 @@
     "url": "https://github.com/sukisu-ultra/sukisu-ultra/issues"
   },
   "devDependencies": {
-    "vitepress": "^2.0.0-alpha.9",
-    "markdown-it-mathjax3": "^4.3.2"
+    "markdown-it-mathjax3": "^4.3.2",
+    "terser": "^5.43.1",
+    "vitepress": "^2.0.0-alpha.9"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
+    "node": ">=18.0.0"
   },
   "packageManager": "pnpm@10.14.0"
 }

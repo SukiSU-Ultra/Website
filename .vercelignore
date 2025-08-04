@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Development files
+.env.local
+.env.development
+.env.test
+.vscode/
+
+# Cache and temporary files
+.vitepress/cache/
+.vitepress/temp/
+docs/.vitepress/cache/
+docs/.vitepress/temp/
+.cache/
+.temp/
+temp/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build artifacts (keep only final dist)
+dist/
+build/
+
+# Source files (only need built assets)
+src/
+zh/
+intro.md
+wrangler.toml
+
+# Documentation source (keep only built version)
+docs/guide/
+docs/reference/
+docs/zh/
+docs/index.md
+
+# Package manager files
+pnpm-workspace.yaml
+.npmrc
+
+# Git
+.git/
+.gitignore
+
+# Testing
+coverage/
+.nyc_output/
+
+# Linting
+.eslintcache
