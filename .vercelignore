@@ -8,7 +8,7 @@ node_modules/
 # Build artifacts
 .vitepress/cache/
 .vitepress/temp/
-dist/
+
 
 # Development files
 .vscode/
@@ -19,6 +19,7 @@ dist/
 # Git and GitHub
 .git/
 .gitignore
+.github/
 
 # Package manager
 .pnpm-store/
@@ -31,11 +32,8 @@ tests/
 **/*.test.*
 **/*.spec.*
 
-# Documentation source (build only)
-docs/guide/
-docs/reference/
-docs/zh/
-docs/index.md
+# Scripts (not needed for build)
+scripts/
 
 # Cloudflare config (not needed)
 wrangler.toml

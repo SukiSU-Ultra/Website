@@ -1,7 +1,7 @@
 {
-  "buildCommand": "pnpm build",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
   "outputDirectory": "docs/.vitepress/dist",
-  "installCommand": "pnpm install",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
@@ -17,12 +17,8 @@
           "value": "nosniff"
         },
         {
-          "key": "Referrer-Policy", 
+          "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "X-DNS-Prefetch-Control",
-          "value": "on"
         }
       ]
     },
