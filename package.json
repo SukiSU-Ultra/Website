@@ -11,6 +11,7 @@
     "dev": "vitepress dev docs --host",
     "preview": "vitepress preview docs",
     "generate:favicons": "node scripts/generate-favicons.js",
+    "clean:favicons": "node scripts/clean-favicons.js",
     "build:all": "pnpm generate:favicons && pnpm build"
   },
   "keywords": [
