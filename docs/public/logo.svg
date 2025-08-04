@@ -8,7 +8,6 @@
    version="1.1"
    id="svg1"
    xml:space="preserve"
-   opacity="0.9"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    sodipodi:docname="zako.optizmism.svg"
    inkscape:export-filename="zako.plain.svg"
@@ -119,16 +118,16 @@
      inkscape:label="main"
      inkscape:groupmode="layer"
      id="layer1"><path
-       style="display:inline;opacity:0.85;fill:#fff9f6;fill-opacity:0.85;stroke:#4c4f59;stroke-width:6.5;stroke-linecap:round;stroke-miterlimit:1.3;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="display:inline;opacity:1;fill:#fff9f6;fill-opacity:1;stroke:#4c4f59;stroke-width:6.5;stroke-linecap:round;stroke-miterlimit:1.3;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="m 164.23888,424.64081 -31.07097,26.05282 c 0,0 -5.19317,18.17613 25.96589,28.93342 31.15907,10.7573 213.29123,1.48377 213.29123,1.48377 0,0 52.30272,11.87012 80.86519,-37.09413 -0.37094,0.74188 -8.90259,19.28895 -8.90259,19.28895 l 1.48377,19.28894 c 0,0 57.73516,-9.41425 30.45647,-148.95524 4.19672,-9.44262 8.39344,-15.21311 8.39344,-15.21311 l -3.14754,-21.77049 c 0,0 5.65758,-40.33533 7.88323,-45.52851 2.22564,-5.19317 9.64447,-11.12823 9.64447,-11.12823 0,0 -2.78206,-20.40177 -6.67694,-26.15136 -0.74189,-3.33847 6.86241,-35.05395 2.04017,-58.05231 -7.04788,-11.87012 -4.82223,-11.87012 -18.918,-25.59495 0,0.37094 8.90259,-44.88389 -0.74188,-73.446367 -2.96753,0 -32.27189,-10.757296 -96.81567,23.740241 -0.37094,1.112824 -26.33683,-30.046242 -153.56969,-15.950474 -0.74188,0 -43.40012,-37.836009 -66.76942,-40.432598 -1.11283,-0.370941 -22.62742,-4.080354 -25.22401,48.964247 0,1.112824 -44.14201,15.950474 -56.01213,64.914721 -11.87012,48.96425 -11.128238,80.86519 -11.128238,80.86519 0,0 -18.904912,27.6632 -9.798121,25.03308 5.346826,-1.54421 4.975885,23.56023 4.975885,23.56023 l -2.225648,39.31977 c 0,0 -14.466709,35.23942 -14.83765,59.72155 -0.370942,24.48212 -0.741883,34.12659 4.822236,48.5933 5.564119,14.46671 20.772711,46.7386 42.658245,63.06002 8.902591,0.37094 18.918001,1.8547 18.918001,1.8547 l 3.70942,-20.77271 c 0,0 18.918,15.95048 32.27189,14.83765 13.35388,-1.11282 -0.74189,-0.74188 -0.74189,-0.74188 l -13.72482,-17.80518 z"
        id="path2"
        sodipodi:nodetypes="ccscccccccscccccccccscsccsscccsccc"
        inkscape:label="整个人的边框" /><path
        id="path91"
-       style="opacity:0.85;fill:#93d4fa;fill-opacity:0.85;stroke:#4c4f59;stroke-width:6.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.3;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="opacity:1;fill:#93d4fa;fill-opacity:1;stroke:#4c4f59;stroke-width:6.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.3;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="m 133.91016,110.16992 -69.738285,47.48047 18.263976,30.75433 -31.617492,55.67536 28.5625,17.0625 14.837891,-1.48438 2.226562,-55.64062 2.577791,-4.39109 18.193697,-21.94485 23.74023,-49.70703 z"
        sodipodi:nodetypes="ccccccccccc" /><path
-       style="display:inline;opacity:0.85;fill:#ace0fe;fill-opacity:0.85;stroke:#4c4f59;stroke-width:6.54357;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.3;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+       style="display:inline;opacity:1;fill:#ace0fe;fill-opacity:1;stroke:#4c4f59;stroke-width:6.54357;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.3;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
        d="m 217.01397,405.82758 c 0,0 7.41728,-25.94462 41.16595,-27.07265 33.74866,-1.12802 53.77534,4.1361 53.77534,4.1361 0,0 11.12594,6.39215 17.80149,14.66435 6.67557,8.2722 28.92743,40.60895 41.53682,48.88115 12.60939,8.27219 15.20545,15.41636 15.20545,15.41636 l -1.85433,11.28027 c 0,0 -14.83458,10.15224 -30.78175,11.65627 -15.94717,1.50404 -147.60404,0 -147.60404,0 l -30.04002,-3.00807"
        id="path71"
        inkscape:label="衣服底色" /><path
