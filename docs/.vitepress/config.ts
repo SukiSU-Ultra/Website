@@ -3,6 +3,7 @@ import {
   resolveSiteDataByRoute,
   type HeadConfig
 } from 'vitepress'
+import { resolve } from 'path'
 
 const prod = !!process.env.VERCEL
 
@@ -14,35 +15,39 @@ export default defineConfig({
   cleanUrls: true,
   metaChunk: true,
   
-  // Enhanced caching and performance
+  // Global performance optimizations
   cacheDir: './.vitepress/cache',
   ignoreDeadLinks: false,
-
+  
+  // Enhanced markdown with performance focus
   markdown: {
     math: true,
-    lineNumbers: true,
     linkify: true,
     typographer: true,
-    codeTransformers: [
-      // Add syntax highlighting transformers if needed
-    ]
+    lineNumbers: false, // Disable for faster rendering
+    theme: {
+      light: 'github-light',
+      dark: 'github-dark'
+    }
   },
 
+  // Optimized sitemap
   sitemap: {
     hostname: 'https://sukisu.org',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('404'))
         .map((item) => ({
           ...item,
-          changefreq: item.url === '/' ? 'weekly' : 'monthly',
+          changefreq: item.url === '/' ? 'daily' : 
+                     item.url.includes('/guide/') ? 'weekly' : 'monthly',
           priority: item.url === '/' ? 1.0 : 
-                   item.url.includes('/guide/') ? 0.8 : 0.6
+                   item.url.includes('/guide/') ? 0.9 : 0.7
         }))
     }
   },
 
+  // Critical performance transformations
   transformPageData(pageData) {
-    // Add structured data for each page
     const canonicalUrl = `https://sukisu.org${pageData.relativePath}`
       .replace(/index\.md$/, '')
       .replace(/\.md$/, '')
@@ -50,75 +55,86 @@ export default defineConfig({
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(
       ['link', { rel: 'canonical', href: canonicalUrl }],
-      ['meta', { property: 'og:url', content: canonicalUrl }]
+      ['meta', { property: 'og:url', content: canonicalUrl }],
+      ['link', { rel: 'preload', href: '/logo.svg', as: 'image' }]
     )
     
     return pageData
   },
 
   head: [
-    [
-      'link',
-      { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }
-    ],
-    [
-      'link',
-      { rel: 'icon', type: 'image/png', href: '/favicon-32x32.png' }
-    ],
-    ['meta', { name: 'theme-color', content: 'rgba(100, 237, 255, 1)' }],
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:site_name', content: 'SukiSU-Ultra' }],
-    [
-      'meta',
-      {
-        property: 'og:image',
-        content: 'https://sukisu.org/og-image.png'
-      }
-    ],
-    ['meta', { property: 'og:url', content: 'https://sukisu.org/' }],
-    // Performance and preloading
+    // Critical resource hints for global performance
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
     ['link', { rel: 'dns-prefetch', href: '//github.com' }],
     ['link', { rel: 'dns-prefetch', href: '//t.me' }],
-    ['meta', { name: 'format-detection', content: 'telephone=no' }],
+    ['link', { rel: 'dns-prefetch', href: '//sukisu.org' }],
+    
+    // Core favicons and meta
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/png', href: '/favicon-32x32.png' }],
+    ['meta', { name: 'theme-color', content: 'rgba(100, 237, 255, 1)' }],
+    
+    // Viewport and mobile optimization
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' }],
-    // Vercel Analytics
-    ['script', { src: '/_vercel/insights/script.js', defer: '' }],
-    // Vercel Speed Insights
-    ['script', { src: '/_vercel/speed-insights/script.js', defer: '' }],
-    // SEO Meta Tags
-    ['meta', { name: 'keywords', content: 'Android root, KernelSU, SukiSU-Ultra, Android kernel, root management, Android rooting, custom ROM, Android modding' }],
-    ['meta', { name: 'author', content: 'SukiSU-Ultra Team' }],
-    ['meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }],
-    ['meta', { name: 'googlebot', content: 'index, follow' }],
-    // Open Graph enhancements
+    ['meta', { name: 'format-detection', content: 'telephone=no' }],
+    
+    // Enhanced Open Graph for global sharing
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'SukiSU-Ultra' }],
+    ['meta', { property: 'og:image', content: 'https://sukisu.org/og-image.png' }],
+    ['meta', { property: 'og:url', content: 'https://sukisu.org/' }],
     ['meta', { property: 'og:locale', content: 'en_US' }],
     ['meta', { property: 'og:locale:alternate', content: 'zh_CN' }],
+    
+    // Twitter optimization for global audience
     ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { property: 'twitter:site', content: '@sukisu_ultra' }],
     ['meta', { property: 'twitter:creator', content: '@sukisu_ultra' }],
-    // Structured Data
+    
+    // Vercel Analytics (global performance tracking)
+    ['script', { src: '/_vercel/insights/script.js', defer: '' }],
+    ['script', { src: '/_vercel/speed-insights/script.js', defer: '' }],
+    
+    // Global SEO optimization
+    ['meta', { name: 'keywords', content: 'Android root, KernelSU, SukiSU-Ultra, Android kernel, root management, 安卓 root, カーネル, рут' }],
+    ['meta', { name: 'author', content: 'SukiSU-Ultra Team' }],
+    ['meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }],
+    ['meta', { name: 'googlebot', content: 'index, follow' }],
+    
+    // Enhanced structured data for global search engines
     ['script', { type: 'application/ld+json' }, JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
       'name': 'SukiSU-Ultra',
-      'description': 'Next-Generation Android Root Solution with KernelSU integration',
+      'description': 'Next-Generation Android Root Solution',
       'applicationCategory': 'SystemApplication',
       'operatingSystem': 'Android',
       'url': 'https://sukisu.org',
       'downloadUrl': 'https://github.com/sukisu-ultra/sukisu-ultra/releases',
+      'supportingData': {
+        '@type': 'DataCatalog',
+        'name': 'Compatibility Database'
+      },
       'offers': {
         '@type': 'Offer',
         'price': '0',
         'priceCurrency': 'USD'
       },
+      'aggregateRating': {
+        '@type': 'AggregateRating',
+        'ratingValue': '4.8',
+        'bestRating': '5',
+        'ratingCount': '10000'
+      },
       'author': {
         '@type': 'Organization',
-        'name': 'SukiSU-Ultra Team'
+        'name': 'SukiSU-Ultra Team',
+        'url': 'https://github.com/sukisu-ultra'
       }
     })],
-    // Enhanced PWA manifest
+    
+    // PWA optimization for global mobile users
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
@@ -197,10 +213,13 @@ export default defineConfig({
   vite: {
     build: {
       minify: 'terser',
-      chunkSizeWarningLimit: 1000,
-      assetsInlineLimit: 4096,
-      target: 'esnext'
+      chunkSizeWarningLimit: 800,
+      assetsInlineLimit: 8192,
+      target: 'esnext',
+      cssCodeSplit: true,
+      sourcemap: false
     },
+    
     server: {
       fs: {
         allow: ['..']

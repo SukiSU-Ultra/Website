@@ -1,7 +1,7 @@
 {
   "name": "SukiSU-Ultra Documentation",
   "short_name": "SukiSU-Ultra",
-  "description": "Next-Generation Android Root Solution - Advanced kernel-based root management for Android devices with KernelSU integration",
+  "description": "Next-Generation Android Root Solution - Global Android Root Management",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -11,23 +11,17 @@
   "lang": "en",
   "dir": "ltr",
   "categories": ["productivity", "developer", "utilities", "tools"],
+  "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 480
   },
   "screenshots": [
     {
-      "src": "/screenshot-wide.png",
-      "sizes": "1280x720",
+      "src": "/og-image.png",
+      "sizes": "1200x630",
       "type": "image/png",
       "form_factor": "wide",
       "label": "SukiSU-Ultra Documentation Homepage"
-    },
-    {
-      "src": "/screenshot-narrow.png", 
-      "sizes": "640x1136",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "SukiSU-Ultra Mobile View"
     }
   ],
   "icons": [
@@ -58,28 +52,25 @@
   ],
   "shortcuts": [
     {
-      "name": "Installation Guide",
+      "name": "Install Guide",
       "short_name": "Install",
-      "description": "Quick access to installation instructions",
+      "description": "Quick installation guide",
       "url": "/guide/installation",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
     },
     {
-      "name": "Compatibility",
+      "name": "Device Check",
       "short_name": "Devices",
       "description": "Check device compatibility",
       "url": "/guide/compatibility",
-      "icons": [
-        {
-          "src": "/favicon-32x32.png",
-          "sizes": "32x32"
-        }
-      ]
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "中文版",
+      "short_name": "中文",
+      "description": "Chinese documentation",
+      "url": "/zh/",
+      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
     }
   ]
 }

@@ -1,71 +1,41 @@
-# Dependencies
+# Optimized for Vercel Hobby Plan
 node_modules/
-.pnpm-store/
+.env*
+!.env.example
+.DS_Store
+*.log
 
-# Development files
-.env.local
-.env.development
-.env.test
-.vscode/
-
-# Cache and temporary files
+# Build artifacts
 .vitepress/cache/
 .vitepress/temp/
-docs/.vitepress/cache/
-docs/.vitepress/temp/
-.cache/
-.temp/
-temp/
+dist/
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Editor directories and files
+# Development files
+.vscode/
 .idea/
 *.swp
 *.swo
-*~
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Git and GitHub
+.git/
+.gitignore
 
-# Build artifacts (keep only final dist)
-dist/
-build/
+# Package manager
+.pnpm-store/
+.npmrc
 
-# Source files (only need built assets)
-src/
-zh/
-intro.md
-wrangler.toml
+# Testing
+coverage/
+test/
+tests/
+**/*.test.*
+**/*.spec.*
 
-# Documentation source (keep only built version)
+# Documentation source (build only)
 docs/guide/
 docs/reference/
 docs/zh/
 docs/index.md
 
-# Package manager files
-pnpm-workspace.yaml
-.npmrc
-
-# Git
-.git/
-.gitignore
-
-# Testing
-coverage/
-.nyc_output/
-
-# Linting
-.eslintcache
+# Cloudflare config (not needed)
+wrangler.toml
