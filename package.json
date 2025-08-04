@@ -7,9 +7,11 @@
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "build": "pnpm run docs:build",
-    "dev": "pnpm run docs:dev",
-    "preview": "pnpm run docs:preview"
+    "build": "vitepress build docs",
+    "dev": "vitepress dev docs --host",
+    "preview": "vitepress preview docs",
+    "generate:favicons": "node scripts/generate-favicons.js",
+    "build:all": "pnpm generate:favicons && pnpm build"
   },
   "keywords": [
     "android",
@@ -29,7 +31,9 @@
   },
   "devDependencies": {
     "@types/node": "^24.2.0",
+    "cli-real-favicon": "^0.0.9",
     "markdown-it-mathjax3": "^4.3.2",
+    "sharp": "^0.34.3",
     "terser": "^5.43.1",
     "vitepress": "^2.0.0-alpha.9"
   },

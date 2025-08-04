@@ -1,7 +1,7 @@
 {
   "name": "SukiSU-Ultra Documentation",
   "short_name": "SukiSU-Ultra",
-  "description": "Next-Generation Android Root Solution - Global Android Root Management",
+  "description": "Next-Generation Android Root Solution",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -38,6 +38,54 @@
       "purpose": "any"
     },
     {
+      "src": "/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
@@ -54,23 +102,32 @@
     {
       "name": "Install Guide",
       "short_name": "Install",
-      "description": "Quick installation guide",
+      "description": "Quick installation guide for SukiSU-Ultra",
       "url": "/guide/installation",
-      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+      "icons": [
+        { "src": "/android-chrome-96x96.png", "sizes": "96x96", "type": "image/png" },
+        { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" }
+      ]
     },
     {
       "name": "Device Check",
       "short_name": "Devices",
-      "description": "Check device compatibility",
+      "description": "Check device compatibility with SukiSU-Ultra",
       "url": "/guide/compatibility",
-      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+      "icons": [
+        { "src": "/android-chrome-96x96.png", "sizes": "96x96", "type": "image/png" },
+        { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" }
+      ]
     },
     {
       "name": "中文版",
       "short_name": "中文",
-      "description": "Chinese documentation",
+      "description": "SukiSU-Ultra 中文文档",
       "url": "/zh/",
-      "icons": [{ "src": "/favicon-32x32.png", "sizes": "32x32" }]
+      "icons": [
+        { "src": "/android-chrome-96x96.png", "sizes": "96x96", "type": "image/png" },
+        { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" }
+      ]
     }
   ]
 }
