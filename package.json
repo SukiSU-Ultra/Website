@@ -36,6 +36,8 @@
     "@types/node": "^24.2.0",
     "cli-real-favicon": "^0.0.9",
     "markdown-it-mathjax3": "^4.3.2",
+    "canvas-confetti": "^1.9.3",
+    "vue": "^3.5.18",
     "sharp": "^0.34.3",
     "terser": "^5.43.1",
     "vitepress": "^2.0.0-alpha.9"

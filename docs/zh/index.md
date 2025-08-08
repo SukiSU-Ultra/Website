@@ -41,3 +41,4 @@ features:
 -  title: 支持 KPM
    details: 完整的基于 KernelPatch 的 KPM 功能。
 ---
+<Confetti />

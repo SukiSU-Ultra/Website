@@ -1,3 +1,6 @@
+@import './custom-block.css';
+@import './doc-fade-in.css';
+
 :root:where(:lang(fa)) {
   --vp-font-family-base:
     'Vazirmatn', 'Inter', ui-sans-serif, system-ui, sans-serif,
