@@ -7,16 +7,16 @@ import { resolve } from 'path'
 
 export default defineConfig({
   title: 'SukiSU-Ultra',
-  description: 'Next-Generation Android Root Solution - Advanced kernel-based root management for Android devices with KernelSU integration',
+  // description: 'Next-Generation Android Root Solution - Advanced kernel-based root management for Android devices with KernelSU integration',
 
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,
-  
+
   // Global performance optimizations
   cacheDir: './.vitepress/cache',
   ignoreDeadLinks: false,
-  
+
   // Enhanced markdown with performance focus
   markdown: {
     math: true,
@@ -34,29 +34,29 @@ export default defineConfig({
     hostname: 'https://sukisu.org',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('404'))
-        .map((item) => ({
-          ...item,
-          changefreq: item.url === '/' ? 'daily' : 
-                     item.url.includes('/guide/') ? 'weekly' : 'monthly',
-          priority: item.url === '/' ? 1.0 : 
-                   item.url.includes('/guide/') ? 0.9 : 0.7
-        }))
+          .map((item) => ({
+            ...item,
+            changefreq: item.url === '/' ? 'daily' :
+                item.url.includes('/guide/') ? 'weekly' : 'monthly',
+            priority: item.url === '/' ? 1.0 :
+                item.url.includes('/guide/') ? 0.9 : 0.7
+          }))
     }
   },
 
   // Critical performance transformations
   transformPageData(pageData) {
     const canonicalUrl = `https://sukisu.org${pageData.relativePath}`
-      .replace(/index\.md$/, '')
-      .replace(/\.md$/, '')
-    
+        .replace(/index\.md$/, '')
+        .replace(/\.md$/, '')
+
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(
-      ['link', { rel: 'canonical', href: canonicalUrl }],
-      ['meta', { property: 'og:url', content: canonicalUrl }],
-      ['link', { rel: 'preload', href: '/logo.svg', as: 'image' }]
+        ['link', { rel: 'canonical', href: canonicalUrl }],
+        ['meta', { property: 'og:url', content: canonicalUrl }],
+        ['link', { rel: 'preload', href: '/logo.svg', as: 'image' }]
     )
-    
+
     return pageData
   },
 
@@ -67,35 +67,35 @@ export default defineConfig({
     ['link', { rel: 'dns-prefetch', href: '//github.com' }],
     ['link', { rel: 'dns-prefetch', href: '//t.me' }],
     ['link', { rel: 'dns-prefetch', href: '//sukisu.org' }],
-    
+
     // Essential favicon setup - optimized for performance
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }],
     ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' }],
-    
+
     // Apple Touch Icon (covers all iOS devices)
     ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
-    
+
     // Safari Pinned Tab
     ['link', { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#64edff' }],
     ['meta', { name: 'msapplication-square310x310logo', content: '/mstile-310x310.png' }],
     ['meta', { name: 'msapplication-config', content: '/browserconfig.xml' }],
-    
+
     // Web App Manifest
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
-    
+
     // Theme and app configuration
     ['meta', { name: 'theme-color', content: '#64edff' }],
     ['meta', { name: 'application-name', content: 'SukiSU-Ultra' }],
     ['meta', { name: 'apple-mobile-web-app-title', content: 'SukiSU-Ultra' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }],
-    
+
     // Viewport and mobile optimization
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, viewport-fit=cover' }],
     ['meta', { name: 'format-detection', content: 'telephone=no' }],
-    
+
     // Enhanced Open Graph for global sharing
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'SukiSU-Ultra' }],
@@ -106,25 +106,25 @@ export default defineConfig({
     ['meta', { property: 'og:url', content: 'https://sukisu.org/' }],
     ['meta', { property: 'og:locale', content: 'en_US' }],
     ['meta', { property: 'og:locale:alternate', content: 'zh_CN' }],
-    
+
     // Twitter optimization for global audience
     ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { property: 'twitter:site', content: '@sukisu_ultra' }],
     ['meta', { property: 'twitter:creator', content: '@sukisu_ultra' }],
     ['meta', { property: 'twitter:image', content: 'https://sukisu.org/og-image.png' }],
-    
+
     // Additional SEO optimizations
     ['meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }],
     ['meta', { name: 'googlebot', content: 'index, follow' }],
     ['meta', { name: 'bingbot', content: 'index, follow' }],
     ['meta', { name: 'referrer', content: 'strict-origin-when-cross-origin' }],
-    
+
     // Global SEO optimization
     ['meta', { name: 'keywords', content: 'Android root, KernelSU, SukiSU-Ultra, Android kernel, root management, 安卓 root, カーネル, рут' }],
     ['meta', { name: 'author', content: 'SukiSU-Ultra Team' }],
     ['meta', { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' }],
     ['meta', { name: 'googlebot', content: 'index, follow' }],
-    
+
     // Enhanced structured data for global search engines
     ['script', { type: 'application/ld+json' }, JSON.stringify({
       '@context': 'https://schema.org',
@@ -156,16 +156,16 @@ export default defineConfig({
         'url': 'https://github.com/sukisu-ultra'
       }
     })],
-    
+
     // PWA optimization for global mobile users
     ['link', { rel: 'manifest', href: '/site.webmanifest' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' }],
     ['meta', { name: 'apple-mobile-web-app-title', content: 'SukiSU-Ultra' }],
-    
+
     // Cloudflare Web Analytics
-    ['script', { 
-      defer: '', 
+    ['script', {
+      defer: '',
       src: 'https://static.cloudflareinsights.com/beacon.min.js',
       'data-cf-beacon': '{"token": "dcc5feef58bf4c56a170a99f4cec4798"}'
     }]
@@ -176,69 +176,32 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/sukisu-ultra/sukisu-ultra' },
-      { 
+      {
         icon: {
           svg: '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>'
         },
-        link: 'https://t.me/sukiksu' 
+        link: 'https://t.me/sukiksu'
       }
     ],
-
     search: {
       provider: 'local'
     }
   },
 
+  rewrites: {
+    "en/:rest*": ":rest*",
+  },
+
   locales: {
-    root: { 
-      label: 'English',
-      themeConfig: {
-        nav: [
-          { text: 'Home', link: '/' },
-          { text: 'Guide', link: '/guide/' },
-          { text: 'Compatibility', link: '/guide/compatibility' },
-          { text: 'Links', link: '/guide/links' }
-        ],
-        sidebar: {
-          '/guide/': [
-            {
-              text: 'Getting Started',
-              items: [
-                { text: 'Introduction', link: '/guide/' },
-                { text: 'Installation', link: '/guide/installation' },
-                { text: 'Compatibility', link: '/guide/compatibility' },
-                { text: 'Links', link: '/guide/links' }
-              ]
-            }
-          ]
-        }
-      }
+    root: {
+      label: "English",
     },
-    zh: { 
-      label: '简体中文',
-      themeConfig: {
-        nav: [
-          { text: '首页', link: '/zh/' },
-          { text: '指南', link: '/zh/guide/' },
-          { text: '兼容性', link: '/zh/guide/compatibility' },
-          { text: '链接', link: '/zh/guide/links' }
-        ],
-        sidebar: {
-          '/zh/guide/': [
-            {
-              text: '开始使用',
-              items: [
-                { text: '介绍', link: '/zh/guide/' },
-                { text: '安装', link: '/zh/guide/installation' },
-                { text: '兼容性', link: '/zh/guide/compatibility' },
-                { text: '链接', link: '/zh/guide/links' }
-              ]
-            }
-          ]
-        }
-      }
+    zh: {
+      label: "简体中文",
+      link: "/zh/",
     }
   },
+
 
   vite: {
     build: {
@@ -249,12 +212,11 @@ export default defineConfig({
       cssCodeSplit: true,
       sourcemap: false
     },
-    
+
     server: {
       fs: {
         allow: ['..']
       }
     }
   }
-
 })
