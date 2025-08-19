@@ -51,9 +51,16 @@ export default defineConfig({
 function nav(): DefaultTheme.NavItem[] {
     return [
         { text: '首页', link: '/zh/' },
-        { text: '指南', link: '/zh/guide/' },
-        { text: '兼容性', link: '/zh/guide/compatibility' },
-        { text: '链接', link: '/zh/guide/links' }
+        {
+            text: '开始使用',
+            items: [
+                {text: '介绍', link: '/zh/guide/'},
+                {text: '安装', link: '/zh/guide/installation'},
+                {text: '兼容性', link: '/zh/guide/compatibility'},
+                {text: '链接', link: '/zh/guide/links'},
+                {text: '许可', link: '/zh/guide/license'},
+            ]
+        }
     ];
 }
 
@@ -65,7 +72,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
                 { text: '介绍', link: '/guide/' },
                 { text: '安装', link: '/guide/installation' },
                 { text: '兼容性', link: '/guide/compatibility' },
-                { text: '链接', link: '/guide/links' }
+                { text: '链接', link: '/guide/links' },
+                { text: '许可', link: '/guide/license' },
             ]
         }
     ];

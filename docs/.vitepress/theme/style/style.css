@@ -20,13 +20,13 @@
     #47caff 50%
   );
   --vp-home-hero-image-filter: blur(44px);
-  
+
   /* Enhanced brand color for better contrast */
   --vp-c-brand-1: #1e40af;
   --vp-c-brand-2: #2563eb;
   --vp-c-brand-3: #3b82f6;
   --vp-c-brand-soft: rgba(30, 64, 175, 0.14);
-  
+
   /* Button contrast improvements */
   --vp-button-brand-bg: #1e40af;
   --vp-button-brand-text: #ffffff;
@@ -42,7 +42,7 @@
   --vp-c-brand-2: #3b82f6;
   --vp-c-brand-3: #2563eb;
   --vp-c-brand-soft: rgba(96, 165, 250, 0.16);
-  
+
   --vp-button-brand-bg: #3b82f6;
   --vp-button-brand-text: #000000;
   --vp-button-brand-hover-bg: #60a5fa;

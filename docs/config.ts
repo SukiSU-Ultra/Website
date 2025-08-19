@@ -53,9 +53,16 @@ export default defineConfig({
 function nav(): DefaultTheme.NavItem[] {
     return [
         {text: 'Home', link: '/'},
-        {text: 'Guide', link: '/guide/'},
-        {text: 'Compatibility', link: '/guide/compatibility'},
-        {text: 'Links', link: '/guide/links'}
+        {
+            text: 'Getting Started',
+            items: [
+                {text: 'Introduction', link: '/guide/'},
+                {text: 'Installation', link: '/guide/installation'},
+                {text: 'Compatibility', link: '/guide/compatibility'},
+                {text: 'Links', link: '/guide/links'},
+                {text: 'license', link: '/guide/license'}
+            ]
+        }
     ];
 }
 
@@ -67,7 +74,8 @@ function sidebar(): DefaultTheme.SidebarItem[] {
                 {text: 'Introduction', link: '/guide/'},
                 {text: 'Installation', link: '/guide/installation'},
                 {text: 'Compatibility', link: '/guide/compatibility'},
-                {text: 'Links', link: '/guide/links'}
+                {text: 'Links', link: '/guide/links'},
+                {text: 'license', link: '/guide/license'}
             ]
         }
     ]
