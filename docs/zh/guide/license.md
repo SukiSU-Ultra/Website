@@ -29,7 +29,7 @@
 
 **版权持有者：**
 
-- **动画角色艺术：** [五十根大虾仁](https://space.bilibili.com/370927)
+- **动画角色艺术：** [怡子曰曰](https://space.bilibili.com/10545509)
 - **品牌知识产权：** [明风OuO](https://space.bilibili.com/274939213)
 - **矢量化制作：** @MiRinChan
 
