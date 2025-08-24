@@ -53,7 +53,7 @@ KernelSU 使用 kprobe 机制来做内核的相关 hook，如果 _kprobe_ 可以
 
 替换 KernelSU 添加到内核源代码树的步骤的执行命令为：
 
-```sh
+```sh [bash]
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
 ```
 
@@ -74,19 +74,19 @@ curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kern
 
 ### GKI 内核
 
-```sh
+```sh [bash]
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
 ```
 
 ### non-GKI 内核
 
-```sh
+```sh [bash]
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
 ```
 
 ### 带有 susfs 的 GKI / non-GKI 内核（实验）
 
-```sh
+```sh [bash]
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-{{branch}}
 ```
 
