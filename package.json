@@ -66,6 +66,7 @@
   },
   "packageManager": "pnpm@10.15.0",
   "dependencies": {
+    "@nolebase/vitepress-plugin-git-changelog": "^2.18.2",
     "vitepress-plugin-group-icons": "^1.6.3"
   }
 }
