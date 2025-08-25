@@ -6,3 +6,8 @@
 [![Last Commit](https://img.shields.io/github/last-commit/sukisu-ultra/website?style=flat-square)](https://github.com/sukisu-ultra/website/commits/main)
 [![Repo Size](https://img.shields.io/github/repo-size/sukisu-ultra/website?style=flat-square)](https://github.com/sukisu-ultra/website)
 [![GitHub Stars](https://img.shields.io/github/stars/sukisu-ultra/website?style=flat-square)](https://github.com/sukisu-ultra/website/stargazers)
+
+## For Contributing open pull request here
+[Website(https://github.com/typeflu/website)]
+## 在这里贡献开放拉取请求
+(https://github.com/typeflu/website)
