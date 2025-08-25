@@ -56,6 +56,7 @@ function nav(): DefaultTheme.NavItem[] {
             items: [
                 {text: '介绍', link: '/zh/guide/'},
                 {text: '安装', link: '/zh/guide/installation'},
+                {text: '集成', link: '/zh/guide/how-to-integrate'},
                 {text: '兼容性', link: '/zh/guide/compatibility'},
                 {text: '链接', link: '/zh/guide/links'},
                 {text: '许可', link: '/zh/guide/license'},
@@ -71,6 +72,7 @@ function sidebar(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: '介绍', link: '/guide/' },
                 { text: '安装', link: '/guide/installation' },
+                { text: '集成', link: '/guide/how-to-integrate'},
                 { text: '兼容性', link: '/guide/compatibility' },
                 { text: '链接', link: '/guide/links' },
                 { text: '许可', link: '/guide/license' },

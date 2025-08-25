@@ -1,166 +1,121 @@
-# Installation
+# Installation Guide
 
-## Usage
+This guide provides comprehensive instructions for installing SukiSU-Ultra on your Android device. Please follow the steps carefully.
 
-### Universal GKI
+## Prerequisites
 
-Please **all** refer to [KernelSU Installation Guide](https://kernelsu.org/zh_CN/guide/installation.html)
+Before you begin, ensure you have the following:
 
-::: info
-1. For devices with GKI 2.0 such as Xiaomi, Redmi, Samsung, etc. (excludes kernel-modified manufacturers such as Meizu, OnePlus, Realme, and Oppo)
-2. Find the GKI build in [more links](./links). Find the device kernel version. Then download it and use TWRP or kernel flashing tool to flash the zip file with `AnyKernel3` suffix.
-3. The `.zip` archive without suffix is uncompressed, the `gz` suffix is the compression used by specific models.
-:::
-
-### OnePlus
-
-1. Use the link mentioned in the 'More Links' section to create a customized build with your device information, and then flash the zip file with the AnyKernel3 suffix.
-
-::: tip
-- You only need to fill in the first two parts of kernel versions, such as `5.10`, `5.15`, `6.1`, or `6.6`.
-- Please search for the processor codename by yourself, usually it is all English without numbers.
-- You can find the branch and configuration files from the OnePlus open-source kernel repository.
-- Custom recovery (TWRP recommended)
-- Compatible kernel version (see compatibility section)
-- Basic knowledge of Android flashing procedures
-:::
+- [ ] A compatible device. Check the [Compatibility Guide](./compatibility.md) for details.
+- [ ] Unlocked bootloader.
+- [ ] Custom recovery installed, such as TWRP.
+- [ ] Basic knowledge of flashing custom ROMs and kernels.
+- [ ] Your device's kernel source or a compatible pre-built kernel.
 
 ## Installation Methods
 
-### Universal GKI Installation
+There are several ways to install SukiSU-Ultra, depending on your device and preference.
 
-::: info
-For devices with GKI 2.0 such as Xiaomi, Redmi, Samsung, etc. (excludes kernel-modified manufacturers such as Meizu, OnePlus, Realme, and Oppo)
-:::
+### Method 1: Using Pre-built GKI Packages
+
+This is the recommended method for devices with Generic Kernel Image (GKI) 2.0, such as many Xiaomi, Redmi, and Samsung models.[^1]
+
+[^1]: This method is not suitable for devices from manufacturers that heavily modify the kernel, like Meizu, OnePlus, Realme, and Oppo.
 
 #### Steps:
 
-1. **Download GKI Build**
-   
-   Find the GKI build from our [resources section](./links). Look for your device's kernel version and download the zip file with AnyKernel3 suffix.
-
-2. **Flash via Recovery**
-   
-   - Boot into TWRP recovery
-   - Select "Install" 
-   - Navigate to the downloaded AnyKernel3 zip file
-   - Swipe to flash
-   - Reboot system
-
-3. **Verify Installation**
-   
-   - Install the SukiSU Ultra manager app
-   - Check if root access is working
-   - Verify kernel version in settings
+1.  **Download GKI Build**: Visit our [resources section](./links.md) to find the appropriate GKI build for your device's kernel version. Download the `.zip` file that includes `AnyKernel3` in its name.
+2.  **Flash via Recovery**:
+    - [ ] Boot your device into TWRP recovery.
+    - [ ] Select "Install".
+    - [ ] Navigate to the downloaded `AnyKernel3` zip file and select it.
+    - [ ] Swipe to confirm the flash.
+    - [ ] Once flashing is complete, reboot your system.
+3.  **Verify Installation**:
+    - [ ] Install the SukiSU-Ultra Manager app.
+    - [ ] Open the app and check if root access is granted and working correctly.
+    - [ ] You can also verify the new kernel version in your device's settings.
 
 ::: details File Format Guide
-The `.zip` archive without suffix is uncompressed, the `gz` suffix is the compression used by specific models.
+The `.zip` archive without a suffix is uncompressed. The `.gz` suffix indicates compression used for specific models.
 :::
 
-### OnePlus Device Installation
+### Method 2: Custom Build for OnePlus Devices
+
+For OnePlus devices, you'll need to create a custom build.
 
 #### Steps:
 
-1. **Get Device Information**
-   
-   Gather your device information:
-   - Kernel version (first two parts, e.g., 5.10, 5.15, 6.1, 6.6)
-   - Processor codename (usually English without numbers)
-   - Branch and configuration files from OnePlus open-source kernel repository
+1.  **Gather Device Information**: You will need:
+    -   Your kernel version (e.g., `5.10`, `5.15`).
+    -   Your processor's codename.
+    -   The branch and configuration files from the OnePlus open-source kernel repository.
+2.  **Create Custom Build**: Use the link in our [resources section](./links.md) to generate a custom build with your device's information.
+3.  **Flash the Build**:
+    - [ ] Download the generated `AnyKernel3` zip file.
+    - [ ] Boot into recovery.
+    - [ ] Flash the zip file.
+    - [ ] Reboot and verify the installation.
 
-2. **Create Custom Build**
-   
-   Use the link mentioned in our [resources section](./links) to create a customized build with your device information.
+### Method 3: Manual Kernel Integration (Advanced)
 
-3. **Flash the Build**
-   
-   - Download the generated zip file with AnyKernel3 suffix
-   - Boot into recovery mode
-   - Flash the zip file
-   - Reboot and verify installation
+This method is for advanced users who are building a kernel from source.
 
-::: info
-You only need to fill in the first two parts of kernel versions. Search for the processor codename yourself - it's usually all English without numbers.
-:::
+#### Integration Scripts:
 
-### Manual Kernel Integration
-
-For advanced users who want to integrate SukiSU Ultra into their own kernel builds:
-
-#### Main Branch (GKI)
-```bash
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
-```
-
-#### Non-GKI Branch
-```bash
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
-```
-
-#### SUSFS-Dev Branch (Recommended)
-```bash
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
-```
+-   **Main Branch (GKI)**:
+    ```sh [bash]
+    curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
+    ```
+-   **Non-GKI Branch**:
+    ```sh [bash]        
+    curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
+    ```
+-   **SUSFS-Dev Branch (Recommended)**:
+    ```sh [bash]
+    curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
+    ```
 
 ::: warning Required Kernel Configs
-For KPM support, add `CONFIG_KPM=y`
-
-For non-GKI devices, also add `CONFIG_KALLSYMS=y` and `CONFIG_KALLSYMS_ALL=y`
+For KPM support, you must enable `CONFIG_KPM=y`.
+For non-GKI devices, you also need to enable `CONFIG_KALLSYMS=y` and `CONFIG_KALLSYMS_ALL=y`.
 :::
 
-## Post-Installation Setup
+## Post-Installation
 
-### System Updates with Root Retention
+### Maintaining Root After OTA Updates
 
-::: info 💡
-How to maintain root access after OTA updates:
+To keep root access after an Over-the-Air (OTA) update, follow these steps ==before rebooting==.
+
+1.  **Flash to Inactive Slot**:
+    - [ ] After the OTA update is downloaded and installed, **do not reboot**.
+    - [ ] Open the SukiSU-Ultra Manager.
+    - [ ] Go to the flashing/patching interface.
+    - [ ] Select your `AnyKernel3` kernel zip file.
+    - [ ] Choose to install it to the inactive slot.
+    - [ ] Once flashed, you can safely reboot.
+2.  **Alternative: LKM Mode**: You can also use LKM mode to install to the unused slot after an OTA.
+
+::: tip
+For non-GKI devices, the safest method to retain root after an OTA is to use TWRP to flash the kernel again.
 :::
 
-#### Steps:
+## Verification Checklist
 
-1. **Before Rebooting After OTA**
+After installation, please verify the following:
 
-   Don't reboot immediately after the OTA update is installed.
+- [ ] **Manager App**: The SukiSU-Ultra Manager app opens and shows a successful root status.
+- [ ] **Root Access**: Root checker apps confirm that root access is working.
+- [ ] **Kernel Version**: The kernel version in `Settings > About Phone` reflects the SukiSU-Ultra kernel.
 
-2. **Flash to Opposite Slot**
+## Troubleshooting
 
-   - Open SukiSU Ultra manager
-   - Go to flashing/patching kernel interface
-   - Find "GKI/non_GKI install"
-   - Select your AnyKernel3 kernel zip file
-   - Choose the slot opposite to current running slot
-   - Flash and then reboot
+If you encounter any issues:
 
-3. **Alternative: LKM Mode**
-
-   Use LKM mode to install to the unused slot after OTA.
-
-::: warning
-**Note for Non-GKI devices:** This method is not supported for all non-GKI devices. Use TWRP for non-GKI devices as the safest method.
-:::
-
-## Verification
-
-After installation, verify everything is working correctly:
-
-### ✅ Manager App
-Install and open the SukiSU Ultra manager to check root status
-
-### 🔍 Root Check
-Use root checker apps to verify root access is working
-
-### ⚙️ Kernel Info
-Check kernel version in Settings > About Phone
-
-## Need Help?
-
-If you encounter issues during installation:
-
-1. Check our [compatibility guide](./compatibility) for device requirements
-2. Visit our [GitHub repository](https://github.com/sukisu-ultra/sukisu-ultra) for support
-3. Join our [Telegram community](https://t.me/sukiksu) for help
-4. Make sure your device is compatible
+1.  Double-check the [Compatibility Guide](./compatibility.md).
+2.  Visit our [GitHub repository](https://github.com/sukisu-ultra/sukisu-ultra) for issues and solutions.
+3.  Join our [Telegram community](https://t.me/sukiksu) for live support.
 
 ::: danger Safety Reminder
-⚠️ **Always have a backup plan!** Keep your original boot.img and know how to restore your device in case of issues.
+⚠️ **Always have a backup!** Keep a copy of your original `boot.img` and be prepared to restore your device if something goes wrong.
 :::
