@@ -56,12 +56,12 @@
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "vitepress": "2.0.0-alpha.12",
-    "vue": "^3.5.19"
+    "vue": "^3.5.20"
   },
   "engines": {
     "node": ">=18.0.0"
   },
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "dependencies": {
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.2",
     "vitepress-plugin-group-icons": "^1.6.3"
