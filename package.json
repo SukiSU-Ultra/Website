@@ -4,23 +4,9 @@
   "description": "SukiSU-Ultra Documentation - Next-Generation Android Root Solution",
   "type": "module",
   "scripts": {
-    "docs:dev": "vitepress dev docs --host",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "build": "vitepress build docs && pnpm build:sw:dist",
     "dev": "vitepress dev docs --host",
-    "preview": "vitepress preview docs",
-    "generate:favicons": "tsx scripts/generate-favicons.ts",
-    "clean:favicons": "tsx scripts/clean-favicons.ts",
-    "build:sw": "tsc scripts/sw.ts --target ES2022 --lib ES2022,WebWorker --outDir docs/public --skipLibCheck",
-    "build:sw:dist": "tsc scripts/sw.ts --target ES2022 --lib ES2022,WebWorker --outDir docs/.vitepress/dist --skipLibCheck",
-    "build:scripts": "pnpm build:sw",
-    "type-check": "tsc --noEmit",
-    "build:all": "pnpm generate:favicons && pnpm clean:favicons && vitepress build docs && pnpm build:sw:dist && pnpm clean:favicons",
-    "deploy": "pnpm build:all && wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs",
-    "deploy:preview": "pnpm build:all && wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs --env preview",
-    "cf:deploy": "wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs",
-    "cf:preview": "wrangler pages deploy docs/.vitepress/dist --project-name sukisu-ultra-docs --env preview"
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
   },
   "keywords": [
     "android",
@@ -39,31 +25,19 @@
     "url": "https://github.com/sukisu-ultra/sukisu-ultra/issues"
   },
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "@types/serviceworker": "^0.0.152",
-    "canvas-confetti": "^1.9.3",
-    "cli-real-favicon": "^0.0.9",
-    "favicons": "^7.2.0",
-    "markdown-it-footnote": "^4.0.0",
-    "markdown-it-mark": "^4.0.0",
+    "@types/node": "^24.10.0",
     "markdown-it-mathjax3": "^4.3.2",
-    "markdown-it-sub": "^2.0.0",
-    "markdown-it-task-lists": "^2.1.1",
-    "rfg-api": "^0.5.3",
-    "sharp": "^0.34.3",
-    "terser": "^5.43.1",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vitepress": "2.0.0-alpha.12",
-    "vue": "^3.5.20"
+    "vue": "^3.5.22"
   },
   "engines": {
     "node": ">=18.0.0"
   },
-  "packageManager": "pnpm@10.15.0",
+  "license": "MIT",
   "dependencies": {
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.2",
-    "vitepress-plugin-group-icons": "^1.6.3"
+    "canvas-confetti": "^1.9.4",
+    "vitepress-plugin-group-icons": "^1.6.5"
   }
 }
