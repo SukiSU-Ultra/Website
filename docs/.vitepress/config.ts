@@ -232,7 +232,7 @@ export default defineConfig({
             }),
         ],
         build: {
-            minify: 'terser',
+            minify: 'esbuild',
             chunkSizeWarningLimit: 800,
             assetsInlineLimit: 8192,
             target: 'esnext',

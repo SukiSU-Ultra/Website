@@ -1,5 +1,6 @@
 {
   "name": "sukisu-ultra-docs",
+  "author": "Saksham <saksham.mac@icloud.com>",
   "version": "1.0.1",
   "description": "SukiSU-Ultra Documentation - Next-Generation Android Root Solution",
   "type": "module",
@@ -18,11 +19,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sukisu-ultra/sukisu-ultra.git"
+    "url": "https://github.com/sukisu-ultra/website.git"
   },
   "homepage": "https://sukisu.org",
   "bugs": {
-    "url": "https://github.com/sukisu-ultra/sukisu-ultra/issues"
+    "url": "https://github.com/sukisu-ultra/website/issues"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
@@ -36,8 +37,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@iconify/vue": "^5.0.0",
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.2",
-    "canvas-confetti": "^1.9.4",
     "vitepress-plugin-group-icons": "^1.6.5"
   }
 }
