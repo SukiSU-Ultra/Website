@@ -1,6 +1,4 @@
 import {defineConfig, type DefaultTheme} from "vitepress";
-import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
-
 export default defineConfig({
 
     lang: "en-US",

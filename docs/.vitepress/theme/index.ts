@@ -1,7 +1,6 @@
 // .vitepress/theme/index.ts
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
-import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
 import 'virtual:group-icons.css'
 import {h} from 'vue'
 import { Icon as IconifyIcon } from '@iconify/vue'
@@ -11,8 +10,7 @@ import LandingFeatures from './components/LandingFeatures.vue'
 import LandingShowcase from './components/LandingShowcase.vue'
 import LandingPage from './components/LandingPage.vue'
 import ArticleShare from './components/ArticleShare.vue'
-import CopyOrDownloadAsMarkdownButtons from 'vitepress-plugin-llms/vitepress-components/CopyOrDownloadAsMarkdownButtons.vue'
-import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
+
 
 const theme: Theme = {
   extends: DefaultTheme,
@@ -22,7 +20,6 @@ const theme: Theme = {
     })
   },
   enhanceApp({ app }) {
-    app.use(NolebaseGitChangelogPlugin);
     app.component('LandingHero', LandingHero)
     app.component('LandingFeatures', LandingFeatures)
     app.component('LandingShowcase', LandingShowcase)
