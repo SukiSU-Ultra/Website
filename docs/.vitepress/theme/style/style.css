@@ -1,24 +1,21 @@
 @import './custom-block.css';
 @import './doc-fade-in.css';
-
+@import url(https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap);
 .dark .VPButton.brand:focus-visible {
   outline: 2px solid #000000;
   outline-offset: 2px;
 }
 
-@font-face {
-  font-family: 'HarmonyOS Sans SC';
-  src: url('/HarmonyOS_Sans_SC.ttf') format('truetype');
-}
+
 
 :root {
-  --font-sans: 'Inter var', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-heading: 'Inter var', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Urbanist';
+  --font-heading: 'Urbanist';
 }
 
 html[lang^="zh"] {
-  --font-sans: 'HarmonyOS Sans SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Inter', sans-serif;
-  --font-heading: 'HarmonyOS Sans SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Inter', sans-serif;
+  --font-sans: 'Urbanist';
+  --font-heading: 'Urbanist', sans-serif;
 }
 
 body {
@@ -822,4 +819,3 @@ pre, code {
     padding: 1.8rem !important;
   }
 }
-

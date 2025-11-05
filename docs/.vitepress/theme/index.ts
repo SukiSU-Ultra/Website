@@ -1,5 +1,5 @@
 // .vitepress/theme/index.ts
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import type { Theme } from 'vitepress'
 import 'virtual:group-icons.css'
 import {h} from 'vue'
