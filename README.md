@@ -1,1 +1,1 @@
-## [WIP] Work in progress
+### Documentation for sukisu
