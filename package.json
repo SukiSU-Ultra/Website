@@ -37,6 +37,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@catppuccin/vitepress": "^0.1.2",
     "@iconify/vue": "^5.0.0",
     "@nolebase/vitepress-plugin-git-changelog": "^2.18.2",
     "vitepress-plugin-group-icons": "^1.6.5"

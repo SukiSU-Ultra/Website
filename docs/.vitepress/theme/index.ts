@@ -10,7 +10,7 @@ import LandingFeatures from './components/LandingFeatures.vue'
 import LandingShowcase from './components/LandingShowcase.vue'
 import LandingPage from './components/LandingPage.vue'
 import ArticleShare from './components/ArticleShare.vue'
-
+import "@catppuccin/vitepress/theme/frappe/teal.css"
 
 const theme: Theme = {
   extends: DefaultTheme,
