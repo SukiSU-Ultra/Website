@@ -1,30 +1,30 @@
 # 介绍
 
-欢迎使用SukiSU-Ultra，这是下一代Android root解决方案，为Android设备提供基于内核的高级root管理功能
+欢迎使用 SukiSU-Ultra，这是新一代 Android root 解决方案，为 Android 设备提供基于内核的高级 root 管理功能
 
 ## 什么是SukiSU-Ultra？
 
-SukiSU-Ultra是一款专为Android设备设计的现代化、安全且功能强大的root解决方案。它提供内核级别的root权限管理，具备增强的安全功能和更好的兼容性
+SukiSU-Ultra 是专为 Android 设备设计的现代化、安全且功能强大的 root 方案。它提供内核级别的 root 权限管理，具备增强的安全功能和更好的兼容性
 
 ## 主要特性
 
 ### 🔒 基于内核的 su 和 root 权限管理
-在 kernel 级别实现安全的root权限管理，与传统解决方案相比，具有更好的安全性和性能
+在 kernel 级别实现安全的 root 权限管理，与传统解决方案相比，具有更好的安全性和性能
 
 ### 🚫 不基于 OverlayFS 模块系统
-基于5ec1cff的Magic Mount技术构建，提供更稳定可靠的基础
+基于 5ec1cff 的 Magic Mount 技术构建，提供更稳定可靠的基础
 
 ### 📱 应用程序配置文件
-先进的应用程序配置系统，允许您在受控环境中锁定root权限
+先进的应用程序配置系统，允许您在受控环境中锁定 root 权限
 
 ### 🔧 增强的设备支持
-恢复对非GKI/GKI 1.0设备的支持，确保与较旧的Android设备兼容
+恢复对非GKI/GKI 1.0设备的支持，确保与较旧的 Android 设备兼容
 
 ### ⚙️ 广泛的自定义选项
-全面的自定义选项，可根据您的特定需求定制root体验
+全面的自定义选项，可根据您的特定需求定制 root 体验
 
 ### 🔌 KPM内核模块支持
-完整的KernelPatch Module（KPM）功能，支持高级内核修改和增强
+完整的 KernelPatch Module (KPM) 功能，支持高级内核修改和增强
 
 ## 为什么选择SukiSU-Ultra？
 
@@ -38,7 +38,7 @@ SukiSU-Ultra是一款专为Android设备设计的现代化、安全且功能强�
 
 准备好开始使用SukiSU-Ultra了吗？请遵循我们的分步指南：
 
-1. **[安装](./installation)** - 了解如何在您的设备上安装SukiSU-Ultra
+1. **[安装](./installation)** - 了解如何在您的设备上安装 SukiSU-Ultra
 2. **[兼容性](./compatibility)** - 查看设备兼容性要求
 3. **[链接](./links)** - 查找额外资源和下载内容
 
@@ -55,7 +55,7 @@ SukiSU-Ultra是一款专为Android设备设计的现代化、安全且功能强�
 ## 安全须知
 
 ::: danger 重要提示
-⚠️ **Rooting（获取root权限）可能会使您的设备保修失效，如果操作不当还可能造成永久性损坏。**
+⚠️ **获取root权限可能会使您的设备保修失效，如果操作不当还可能造成永久性损坏**
 
 请务必：
 - 操作前创建完整备份
@@ -75,4 +75,4 @@ SukiSU-Ultra是一款专为Android设备设计的现代化、安全且功能强�
 
 ---
 
-**准备好释放您Android设备的全部潜力了吗？** 从我们的[安装指南](./installation)开始，加入成千上万信任SukiSU-Ultra来满足其root需求的用户行列吧。
+**准备好释放您Android设备的全部潜力了吗？** 从我们的[安装指南](./installation)开始，加入成千上万信任SukiSU-Ultra来满足其root需求的用户行列吧!
