@@ -29,8 +29,8 @@ export default defineConfig({
             level: [1, 2, 3]
         },
         theme: {
-            light: 'github-light',
-            dark: 'github-dark'
+            light: 'vitesse-light',
+            dark: 'vitesse-dark'
         }
     },
 

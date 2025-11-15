@@ -61,7 +61,8 @@ function nav(): DefaultTheme.NavItem[] {
                 {text: '链接', link: '/zh/guide/links'},
                 {text: '许可', link: '/zh/guide/license'},
             ]
-        }
+        },
+        { text: '团队', link: '/en/team' }
     ];
 }
 

@@ -61,7 +61,8 @@ function nav(): DefaultTheme.NavItem[] {
                 {text: 'Links', link: '/guide/links'},
                 {text: 'license', link: '/guide/license'}
             ]
-        }
+        },
+        {text: 'Team', link: '/en/team'}
     ];
 }
 
