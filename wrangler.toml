@@ -1,0 +1,13 @@
+name = "sukisu-ultra-website"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "chmod +x build.sh && ./build.sh"
+cwd = ""
+watch_dir = "docs"
+
+[build.upload]
+format = "service-worker"
+
+[[pages_build_output_dir]]
+directory = "docs/.vitepress/dist"
