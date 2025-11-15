@@ -5,6 +5,3 @@ pages_build_output_dir = "docs/.vitepress/dist"
 
 [env.production]
 vars = { NODE_VERSION = "24", BUN_VERSION = "1.3.2" }
-
-[build]
-command = "bun run build"
