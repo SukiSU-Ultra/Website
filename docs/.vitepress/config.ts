@@ -201,57 +201,6 @@ export default defineConfig({
             provider: 'local'
         },
 
-        nav: [
-            {text: 'Home', link: '/'},
-            {
-                text: 'Getting Started',
-                items: [
-                    {text: 'Introduction', link: '/guide/'},
-                    {text: 'Installation', link: '/guide/installation'},
-                    {text: 'Compatibility', link: '/guide/compatibility'},
-                    {text: 'Links', link: '/guide/links'},
-                    {text: 'License', link: '/guide/license'}
-                ]
-            },
-            {text: 'Team', link: '/team'}
-        ],
-        
-        sidebar: {
-            '/': {
-                base: '/',
-                items: [
-                    {
-                        text: 'Getting Started',
-                        items: [
-                            {text: 'Introduction', link: '/guide/'},
-                            {text: 'Installation', link: '/guide/installation'},
-                            {text: 'Compatibility', link: '/guide/compatibility'},
-                            {text: 'Links', link: '/guide/links'},
-                            {text: 'License', link: '/guide/license'}
-                        ]
-                    }
-                ]
-            }
-        },
-
-        editLink: {
-            pattern: 'https://github.com/sukisu-ultra/sukisu-ultra/edit/main/docs/:path',
-            text: 'Edit this page on GitHub',
-        },
-
-        docFooter: {
-            prev: 'Previous',
-            next: 'Next',
-        },
-
-        outline: {
-            label: 'On this page',
-        },
-
-        lastUpdated: {
-            text: 'Last updated',
-        },
-
         notFound: {
             title: 'Page Not Found',
             quote: "Sorry, we couldn't find what you're looking for.",
@@ -275,10 +224,108 @@ export default defineConfig({
     locales: {
         root: {
             label: "English",
+            lang: "en-US",
+            themeConfig: {
+                nav: [
+                    {text: 'Home', link: '/'},
+                    {
+                        text: 'Getting Started',
+                        items: [
+                            {text: 'Introduction', link: '/guide/'},
+                            {text: 'Installation', link: '/guide/installation'},
+                            {text: 'Compatibility', link: '/guide/compatibility'},
+                            {text: 'Links', link: '/guide/links'},
+                            {text: 'License', link: '/guide/license'}
+                        ]
+                    },
+                    {text: 'Team', link: '/team'}
+                ],
+                sidebar: {
+                    '/': {
+                        base: '/',
+                        items: [
+                            {
+                                text: 'Getting Started',
+                                items: [
+                                    {text: 'Introduction', link: '/guide/'},
+                                    {text: 'Installation', link: '/guide/installation'},
+                                    {text: 'Compatibility', link: '/guide/compatibility'},
+                                    {text: 'Links', link: '/guide/links'},
+                                    {text: 'License', link: '/guide/license'}
+                                ]
+                            }
+                        ]
+                    }
+                },
+                editLink: {
+                    pattern: 'https://github.com/sukisu-ultra/sukisu-ultra/edit/main/docs/:path',
+                    text: 'Edit this page on GitHub',
+                },
+                docFooter: {
+                    prev: 'Previous',
+                    next: 'Next',
+                },
+                outline: {
+                    label: 'On this page',
+                },
+                lastUpdated: {
+                    text: 'Last updated',
+                },
+            }
         },
         zh: {
             label: "简体中文",
             link: "/zh/",
+            lang: "zh-Hans",
+            themeConfig: {
+                nav: [
+                    { text: '首页', link: '/zh/' },
+                    {
+                        text: '开始使用',
+                        items: [
+                            {text: '介绍', link: '/zh/guide/'},
+                            {text: '安装', link: '/zh/guide/installation'},
+                            {text: '集成', link: '/zh/guide/how-to-integrate'},
+                            {text: '兼容性', link: '/zh/guide/compatibility'},
+                            {text: '链接', link: '/zh/guide/links'},
+                            {text: '许可', link: '/zh/guide/license'},
+                        ]
+                    },
+                    { text: '团队', link: '/team' }
+                ],
+                sidebar: {
+                    '/zh/': {
+                        base: '/zh/',
+                        items: [
+                            {
+                                text: '开始使用',
+                                items: [
+                                    { text: '介绍', link: '/guide/' },
+                                    { text: '安装', link: '/guide/installation' },
+                                    { text: '集成', link: '/guide/how-to-integrate'},
+                                    { text: '兼容性', link: '/guide/compatibility' },
+                                    { text: '链接', link: '/guide/links' },
+                                    { text: '许可', link: '/guide/license' },
+                                ]
+                            }
+                        ]
+                    }
+                },
+                editLink: {
+                    pattern: 'https://github.com/sukisu-ultra/sukisu-ultra/edit/main/docs/:path',
+                    text: '在 GitHub 上编辑此页面',
+                },
+                docFooter: {
+                    prev: '上一页',
+                    next: '下一页',
+                },
+                outline: {
+                    label: '页面导航',
+                },
+                lastUpdated: {
+                    text: '最后更新于',
+                },
+            }
         },
     },
 
