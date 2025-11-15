@@ -14,7 +14,7 @@
         "@types/node": "^24.10.1",
         "markdown-it-mathjax3": "^5.2.0",
         "typescript": "^5.9.3",
-        "vitepress": "next",
+        "vitepress": "2.0.0-alpha.13",
         "vue": "^3.5.24",
       },
     },

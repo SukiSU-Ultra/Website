@@ -201,8 +201,71 @@ export default defineConfig({
             provider: 'local'
         },
 
-        nav: [],
-        sidebar: {}
+        nav: [
+            {text: 'Home', link: '/'},
+            {
+                text: 'Getting Started',
+                items: [
+                    {text: 'Introduction', link: '/guide/'},
+                    {text: 'Installation', link: '/guide/installation'},
+                    {text: 'Compatibility', link: '/guide/compatibility'},
+                    {text: 'Links', link: '/guide/links'},
+                    {text: 'License', link: '/guide/license'}
+                ]
+            },
+            {text: 'Team', link: '/team'}
+        ],
+        
+        sidebar: {
+            '/': {
+                base: '/',
+                items: [
+                    {
+                        text: 'Getting Started',
+                        items: [
+                            {text: 'Introduction', link: '/guide/'},
+                            {text: 'Installation', link: '/guide/installation'},
+                            {text: 'Compatibility', link: '/guide/compatibility'},
+                            {text: 'Links', link: '/guide/links'},
+                            {text: 'License', link: '/guide/license'}
+                        ]
+                    }
+                ]
+            }
+        },
+
+        editLink: {
+            pattern: 'https://github.com/sukisu-ultra/sukisu-ultra/edit/main/docs/:path',
+            text: 'Edit this page on GitHub',
+        },
+
+        docFooter: {
+            prev: 'Previous',
+            next: 'Next',
+        },
+
+        outline: {
+            label: 'On this page',
+        },
+
+        lastUpdated: {
+            text: 'Last updated',
+        },
+
+        notFound: {
+            title: 'Page Not Found',
+            quote: "Sorry, we couldn't find what you're looking for.",
+            linkLabel: 'Go to home',
+            linkText: 'Take me home',
+        },
+
+        langMenuLabel: 'Languages',
+        returnToTopLabel: 'Return to top',
+        sidebarMenuLabel: 'Menu',
+        darkModeSwitchLabel: 'Theme',
+        lightModeSwitchTitle: 'Switch to light theme',
+        darkModeSwitchTitle: 'Switch to dark theme',
+        skipToContentLabel: 'Skip to content',
     },
 
     rewrites: {
