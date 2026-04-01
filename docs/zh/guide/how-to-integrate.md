@@ -10,25 +10,9 @@ SukiSU 可以集成到 GKI 和 non-GKI 内核中，并且已反向移植到 4.14
 
 ## Hook 方法
 
-1. **KPROBES hook:**
+1. **Tracepoint Syscall Redirect Hook:**
 
-   - GKI kernels 的默认 hook 方法。
-   - 需要 `# CONFIG_KSU_MANUAL_HOOK is not set`（未设定） & `CONFIG_KPROBES=y`
-   - 用作可加载的内核模块 (LKM).
-
-2. **Manual hook:**
-
-   <!-- - backslashxx's syscall manual hook: https://github.com/backslashxx/KernelSU/issues/5 (v1.5 version is not available at the moment, if you want to use it, please use v1.4 version, or standard KernelSU hooks)-->
-
-   - 需要 `CONFIG_KSU_MANUAL_HOOK=y`
-   - 需要 [`guide/how-to-integrate.md`](how-to-integrate.md)
-   - 需要 [https://github.com/~](https://github.com/tiann/KernelSU/blob/main/website/docs/guide/how-to-integrate-for-non-gki.md#manually-modify-the-kernel-source)
-
-3. **Tracepoint Hook:**
-
-   - 自 SukiSU commit [49b01aad](https://github.com/SukiSU-Ultra/SukiSU-Ultra/commit/49b01aad74bcca6dba5a8a2e053bb54b648eb124) 引入的 hook 方法
-   - 需要 `CONFIG_KSU_TRACEPOINT_HOOK=y`
-   - 需要 [`guide/tracepoint-hook.md`](tracepoint-hook.md)
+   - GKI kernels 的默认 hook 方法
    
 <!-- This part refer to [rsuntk/KernelSU](https://github.com/rsuntk/KernelSU). -->
 
@@ -36,16 +20,6 @@ SukiSU 可以集成到 GKI 和 non-GKI 内核中，并且已反向移植到 4.14
 
 1. 使用 `kprobe` 自动集成
 2. 手动集成
-
-## 与 kprobe 集成
-
-适用：
-
-- GKI 内核
-
-不适用：
-
-- non-GKI 内核
 
 KernelSU 使用 kprobe 机制来做内核的相关 hook，如果 _kprobe_ 可以在你编译的内核中正常运行，那么推荐用这个方法来集成。
 
@@ -72,26 +46,14 @@ curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kern
 
 将 KernelSU（SukiSU）添加到内核源代码树的步骤的运行命令将被替换为：
 
-### GKI 内核
+### LKM 内核
 
 ```sh [bash]
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
 ```
 
-### non-GKI 内核
+### 内置构建内核
 
 ```sh [bash]
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
+curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s builtin
 ```
-
-### 带有 susfs 的 GKI / non-GKI 内核（实验）
-
-```sh [bash]
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-{{branch}}
-```
-
-分支:
-
-- `main` (susfs-main)
-- `test` (susfs-test)
-- 版本号 (例如: susfs-1.5.7, 你需要在 [分支](https://github.com/SukiSU-Ultra/SukiSU-Ultra/branches) 里找到它)

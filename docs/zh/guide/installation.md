@@ -77,25 +77,16 @@
 
 面向希望将 SukiSU Ultra 集成到自己内核构建中的高级用户
 
-#### 主分支（GKI）
+#### 主分支（LKM）
 
 ```sh [bash]
 curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main
 ```
 
-#### 非 GKI 分支
+#### 内置构建分支
 
 ```sh [bash]
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s nongki
-```
-
-#### SUSFS-Dev 分支（推荐）
-```sh [bash]
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-dev
-```
-
-```bash
-curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
+curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s builtin
 ```
 
 ::: warning 必需的内核配置
