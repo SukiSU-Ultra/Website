@@ -352,7 +352,7 @@ export default defineConfig({
             chunkSizeWarningLimit: 800,
             assetsInlineLimit: 8192,
             target: 'esnext',
-            cssCodeSplit: true,
+            cssCodeSplit: false,
             sourcemap: false
         },
 
