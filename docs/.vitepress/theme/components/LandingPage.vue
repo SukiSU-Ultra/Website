@@ -24,34 +24,21 @@
       </div>
 
       <div class="sk-shot">
-        <div class="sk-demo" role="img" :aria-label="demo.label">
-          <div class="sk-demo__bar">
-            <span class="sk-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="sk-demo__file">{{ demo.title }}</span>
-            <button type="button" class="sk-replay" @click="play">{{ demo.replay }}</button>
-          </div>
-
-          <div class="sk-demo__body" aria-hidden="true">
-            <div class="sk-term">
-              <div class="sk-cmd">
-                <span class="sk-prompt">$</span> {{ cmdShown }}<i v-if="typing" class="sk-caret"></i>
-              </div>
-              <div
-                v-for="(line, i) in demo.log"
-                :key="i"
-                class="sk-log"
-                :class="{ on: step > i, last: i === demo.log.length - 1 }"
-              >
-                {{ line }}
-              </div>
+        <div class="sk-panel">
+          <h2 class="sk-panel__title">{{ overview.title }}</h2>
+          <div class="sk-cols">
+            <div v-for="col in overview.columns" :key="col.heading" class="sk-col">
+              <h3>{{ col.heading }}</h3>
+              <ul>
+                <li v-for="row in col.rows" :key="row.name">
+                  <span class="sk-item__name">
+                    {{ row.name }}
+                    <small v-if="row.note">{{ row.note }}</small>
+                  </span>
+                  <span class="sk-level" :data-level="row.level">{{ row.label }}</span>
+                </li>
+              </ul>
             </div>
-
-            <ul class="sk-tree">
-              <li v-for="(row, i) in demo.tree" :key="row.name" class="sk-row" :class="{ hit: step >= row.at }">
-                <span class="sk-row__name">{{ row.name }}</span>
-                <span class="sk-tag" :class="{ on: step >= row.at }">{{ row.tag }}</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
@@ -119,16 +106,15 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-
-interface TreeRow {
+interface OverviewRow {
   name: string
-  tag: string
-  /** number of log lines that must be shown before this row is highlighted */
-  at: number
+  note?: string
+  label: string
+  /** full | basic | partial | manual | experimental */
+  level: string
 }
 
-const props = defineProps<{
+defineProps<{
   hero: {
     badge: string
     badgeHref: string
@@ -139,13 +125,9 @@ const props = defineProps<{
     secondary: { label: string; href: string }
     chips: string[]
   }
-  demo: {
-    label: string
+  overview: {
     title: string
-    replay: string
-    command: string
-    log: string[]
-    tree: TreeRow[]
+    columns: { heading: string; rows: OverviewRow[] }[]
   }
   features: {
     title: string
@@ -166,53 +148,10 @@ const props = defineProps<{
   }
 }>()
 
-// Typing animation for the demo. Each log line is revealed in turn after the
-// command has been typed; with reduced motion everything is shown at once.
-const typed = ref(0)
-const step = ref(0)
-let timers: number[] = []
-
-function clear() {
-  timers.forEach((id) => window.clearTimeout(id))
-  timers = []
-}
-
-function play() {
-  clear()
-  const cmd = props.demo.command
-  const lines = props.demo.log.length
-  typed.value = 0
-  step.value = 0
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    typed.value = cmd.length
-    step.value = lines
-    return
-  }
-  const perChar = 14
-  for (let i = 1; i <= cmd.length; i++) {
-    timers.push(window.setTimeout(() => (typed.value = i), 600 + i * perChar))
-  }
-  const base = 600 + cmd.length * perChar + 300
-  for (let s = 1; s <= lines; s++) {
-    timers.push(window.setTimeout(() => (step.value = s), base + (s - 1) * 420))
-  }
-}
-
-onMounted(play)
-onBeforeUnmount(clear)
-
-const cmdShown = computed(() => props.demo.command.slice(0, typed.value))
-const typing = computed(() => typed.value < props.demo.command.length)
 </script>
 
 <style scoped>
 .sk-home {
-  --sk-term: #0f1216;
-  --sk-term-2: #151a20;
-  --sk-term-line: rgba(255, 255, 255, 0.07);
-  --sk-term-text: #e6edf3;
-  --sk-term-dim: #8b95a1;
-  --sk-ok: #8fe0b0;
   --sk-accent: var(--vp-c-brand-1);
   --sk-glow: color-mix(in srgb, var(--vp-c-brand-1) 35%, transparent);
   color: var(--vp-c-text-1);
@@ -351,7 +290,7 @@ const typing = computed(() => typed.value < props.demo.command.length)
   color: var(--vp-c-text-2);
 }
 
-/* ---- Demo window ---- */
+/* ---- Compatibility overview ---- */
 .sk-shot {
   position: relative;
   max-width: 960px;
@@ -368,155 +307,82 @@ const typing = computed(() => typed.value < props.demo.command.length)
   animation: sk-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s both;
 }
 
-.sk-demo {
+.sk-panel {
+  padding: 28px 32px 32px;
   border-radius: 16px;
-  background: var(--sk-term);
-  overflow: hidden;
-  color: var(--sk-term-text);
-  font-family: ui-monospace, 'Fira Code', 'Cascadia Code', 'SF Mono', Consolas, monospace;
+  background: var(--vp-c-bg-soft);
+}
+
+.sk-panel__title {
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
   font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
 }
 
-.sk-demo__bar {
+.sk-cols {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: 10px 14px;
-  background: var(--sk-term-2);
-  border-bottom: 1px solid var(--sk-term-line);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
 }
 
-.sk-dots {
-  display: flex;
-  gap: 6px;
+.sk-col h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.sk-dots i {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.sk-demo__file {
-  color: var(--sk-term-dim);
-}
-
-.sk-replay {
-  justify-self: end;
-  padding: 2px 10px;
-  border: 1px solid var(--sk-term-line);
-  border-radius: 6px;
-  background: transparent;
-  color: var(--sk-term-dim);
-  font: inherit;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.sk-replay:hover {
-  color: var(--sk-term-text);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.sk-demo__body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-}
-
-.sk-term {
-  padding: 20px;
-  min-height: 19em;
-  line-height: 1.75;
-  border-right: 1px solid var(--sk-term-line);
-}
-
-.sk-cmd {
-  overflow-wrap: anywhere;
-  color: #fff;
-}
-
-.sk-prompt {
-  color: var(--sk-accent);
-}
-
-.sk-caret {
-  display: inline-block;
-  width: 0.55em;
-  height: 1.05em;
-  margin-left: 2px;
-  vertical-align: text-bottom;
-  background: var(--sk-accent);
-  animation: sk-blink 1s steps(1) infinite;
-}
-
-.sk-log {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s 0.25s;
-  color: var(--sk-term-dim);
-}
-
-.sk-log.on {
-  visibility: visible;
-  opacity: 1;
-  transform: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.sk-log.last {
-  color: var(--sk-ok);
-}
-
-.sk-tree {
+.sk-col ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  margin: 0;
-  padding: 16px;
 }
 
-.sk-row {
+.sk-col li {
   display: flex;
-  gap: 8px;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin: 0;
-  padding: 6px 10px;
-  border-radius: 6px;
-  color: var(--sk-term-dim);
-  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 12px 0;
+  border-top: 1px solid var(--vp-c-divider);
 }
 
-.sk-row + .sk-row {
-  margin-top: 2px;
-}
-
-.sk-row.hit {
-  color: var(--sk-term-text);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.sk-row__name {
+.sk-item__name {
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: 0.9375rem;
 }
 
-.sk-tag {
+.sk-item__name small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.8125rem;
+  color: var(--vp-c-text-2);
+}
+
+.sk-level {
   flex-shrink: 0;
-  padding: 1px 7px;
-  border: 1px solid color-mix(in srgb, var(--sk-accent) 45%, transparent);
-  border-radius: 5px;
-  font-size: 0.6875rem;
-  color: var(--sk-accent);
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  padding: 2px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vp-c-text-2);
 }
 
-.sk-tag.on {
-  opacity: 1;
+.sk-level[data-level='full'] {
+  border-color: color-mix(in srgb, var(--sk-accent) 50%, transparent);
+  background: var(--vp-c-brand-soft);
+  color: var(--sk-accent);
+}
+
+.sk-level[data-level='basic'],
+.sk-level[data-level='manual'] {
+  color: var(--vp-c-text-1);
 }
 
 /* ---- Sections ---- */
@@ -730,7 +596,6 @@ const typing = computed(() => typed.value < props.demo.command.length)
 
 .sk-btn:focus-visible,
 .sk-badge:focus-visible,
-.sk-replay:focus-visible,
 .sk-link:focus-visible {
   outline: 2px solid var(--sk-accent);
   outline-offset: 3px;
@@ -745,14 +610,13 @@ const typing = computed(() => typed.value < props.demo.command.length)
     margin-top: 40px;
   }
 
-  .sk-demo__body {
+  .sk-cols {
     grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
   }
 
-  .sk-term {
-    min-height: 14em;
-    border-right: 0;
-    border-bottom: 1px solid var(--sk-term-line);
+  .sk-panel {
+    padding: 22px 20px 24px;
   }
 
   .sk-section {
@@ -777,14 +641,10 @@ const typing = computed(() => typed.value < props.demo.command.length)
 
 @media (prefers-reduced-motion: reduce) {
   .sk-hero__copy,
-  .sk-shot,
-  .sk-caret {
+  .sk-shot {
     animation: none;
   }
 
-  .sk-log,
-  .sk-row,
-  .sk-tag,
   .sk-card,
   .sk-link {
     transition: none !important;

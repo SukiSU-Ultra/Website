@@ -16,30 +16,31 @@ const hero = {
   logo: '/logo.svg',
   primary: { label: '开始使用', href: '/zh/guide/installation' },
   secondary: { label: '访问 GitHub', href: 'https://github.com/SukiSU-Ultra/SukiSU-Ultra' },
-  chips: ['支持 GKI 与非 GKI 内核', 'KPM 内核模块', 'SUSFS 管理', '开源']
+  chips: ['LKM 安装', '支持 GKI 与非 GKI 内核', 'KPM 内核模块', '开源']
 }
 
-const demo = {
-  label: '将 SukiSU-Ultra 加入内核源码树的演示',
-  title: '内核源码',
-  replay: '重播',
-  command: 'curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main',
-  log: [
-    '[+] Setting up KernelSU...',
-    '[+] Repository cloned.',
-    '[-] Stashed current changes.',
-    '[+] Repository updated.',
-    '[-] Checked out main.',
-    '[+] Symlink created.',
-    '[+] Modified Makefile.',
-    '[+] Modified Kconfig.',
-    '[+] Done.'
-  ],
-  tree: [
-    { name: 'KernelSU/', tag: '已克隆', at: 2 },
-    { name: 'drivers/kernelsu', tag: '已链接', at: 6 },
-    { name: 'drivers/Makefile', tag: '已修改', at: 7 },
-    { name: 'drivers/Kconfig', tag: '已修改', at: 8 }
+const overview = {
+  title: '以可加载内核模块 (LKM) 方式安装',
+  columns: [
+    {
+      heading: '安装方式',
+      rows: [
+        { name: 'LKM', note: '由管理器使用预构建模块修补你的 boot 镜像', label: '推荐', level: 'full' },
+        { name: 'GKI 内核', note: '刷入预构建的 AnyKernel3 内核', label: '预构建', level: 'basic' },
+        { name: '内置集成', note: '集成到你自己的内核源码', label: '进阶', level: 'manual' }
+      ]
+    },
+    {
+      heading: '预构建 LKM 镜像',
+      rows: [
+        { name: '内核 5.10', note: 'android12 · android13', label: 'aarch64 · x86_64', level: 'full' },
+        { name: '内核 5.15', note: 'android13 · android14', label: 'aarch64 · x86_64', level: 'full' },
+        { name: '内核 6.1', note: 'android14', label: 'aarch64 · x86_64', level: 'full' },
+        { name: '内核 6.6', note: 'android15', label: 'aarch64 · x86_64', level: 'full' },
+        { name: '内核 6.12', note: 'android16', label: 'aarch64 · x86_64', level: 'full' },
+        { name: '内核 6.18', note: 'android17', label: 'aarch64 · x86_64', level: 'full' }
+      ]
+    }
   ]
 }
 
@@ -47,6 +48,11 @@ const features = {
   title: '为什么选择 SukiSU-Ultra',
   description: '安全、性能与可靠性，全都围绕内核级 Root 打造',
   items: [
+    {
+      title: 'LKM 安装',
+      body: '以可加载内核模块方式安装。管理器会用与你设备 KMI 匹配的预构建模块修补 boot 镜像，无需自行编译内核',
+      icon: 'solar:cpu-bolt-outline'
+    },
     {
       title: '非 GKI 内核支持',
       body: '支持 4.x-5.4 的非 GKI / 预 GKI 内核并提供 LTS 模式 (3.x 为实验性)',
@@ -63,19 +69,24 @@ const features = {
       icon: 'solar:download-bold'
     },
     {
+      title: 'App Profile',
+      body: '按应用控制 Root：用户组、权能、SELinux 域、挂载命名空间，以及可复用的模板',
+      icon: 'solar:shield-user-outline'
+    },
+    {
       title: '随心定制',
-      body: '可自定义背景，管理部分 SUSFS 功能（无需 susfsforksu 模块），并可调整 DPI 等细节',
+      body: 'Monet 取色、强调色、Material / Miuix 界面风格、模糊、液态玻璃与页面缩放',
       icon: 'tabler:brush'
     },
     {
       title: 'WebUI X',
-      body: '由 MMRL 提供的新一代 WebUI 实现',
+      body: '模块 WebUI，基于 MMRL 的 WebUI-X-Portable',
       icon: 'arcticons:mmrl'
     },
     {
-      title: '频繁更新',
-      body: '活跃维护，贡献者持续带来改进与修复',
-      icon: 'solar:smartphone-update-bold-duotone'
+      title: '越狱模式',
+      body: '设备以 Permissive SELinux 启动时，可通过 Magica 获取 Root，并支持开机自动越狱',
+      icon: 'solar:lock-unlocked-outline'
     }
   ]
 }
@@ -134,7 +145,7 @@ const footer = {
 
 <LandingPage
   :hero="hero"
-  :demo="demo"
+  :overview="overview"
   :features="features"
   :community="community"
   :banner="banner"

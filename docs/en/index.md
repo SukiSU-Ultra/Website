@@ -16,30 +16,31 @@ const hero = {
   logo: '/logo.svg',
   primary: { label: 'Get Started', href: '/guide/installation' },
   secondary: { label: 'View on GitHub', href: 'https://github.com/SukiSU-Ultra/SukiSU-Ultra' },
-  chips: ['GKI & non-GKI kernels', 'KPM kernel modules', 'SUSFS management', 'Open source']
+  chips: ['LKM install', 'GKI & non-GKI kernels', 'KPM kernel modules', 'Open source']
 }
 
-const demo = {
-  label: 'Demo of adding SukiSU-Ultra to a kernel source tree',
-  title: 'kernel source',
-  replay: 'Replay',
-  command: 'curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s main',
-  log: [
-    '[+] Setting up KernelSU...',
-    '[+] Repository cloned.',
-    '[-] Stashed current changes.',
-    '[+] Repository updated.',
-    '[-] Checked out main.',
-    '[+] Symlink created.',
-    '[+] Modified Makefile.',
-    '[+] Modified Kconfig.',
-    '[+] Done.'
-  ],
-  tree: [
-    { name: 'KernelSU/', tag: 'cloned', at: 2 },
-    { name: 'drivers/kernelsu', tag: 'linked', at: 6 },
-    { name: 'drivers/Makefile', tag: 'patched', at: 7 },
-    { name: 'drivers/Kconfig', tag: 'patched', at: 8 }
+const overview = {
+  title: 'Install as a Loadable Kernel Module (LKM)',
+  columns: [
+    {
+      heading: 'Ways to install',
+      rows: [
+        { name: 'LKM', note: 'The Manager patches your boot image with a prebuilt module', label: 'Recommended', level: 'full' },
+        { name: 'GKI kernel', note: 'Flash a prebuilt AnyKernel3 kernel', label: 'Prebuilt', level: 'basic' },
+        { name: 'Built-in', note: 'Integrate into your own kernel source', label: 'Advanced', level: 'manual' }
+      ]
+    },
+    {
+      heading: 'Prebuilt LKM images',
+      rows: [
+        { name: 'Kernel 5.10', note: 'android12 · android13', label: 'aarch64 · x86_64', level: 'full' },
+        { name: 'Kernel 5.15', note: 'android13 · android14', label: 'aarch64 · x86_64', level: 'full' },
+        { name: 'Kernel 6.1', note: 'android14', label: 'aarch64 · x86_64', level: 'full' },
+        { name: 'Kernel 6.6', note: 'android15', label: 'aarch64 · x86_64', level: 'full' },
+        { name: 'Kernel 6.12', note: 'android16', label: 'aarch64 · x86_64', level: 'full' },
+        { name: 'Kernel 6.18', note: 'android17', label: 'aarch64 · x86_64', level: 'full' }
+      ]
+    }
   ]
 }
 
@@ -47,6 +48,11 @@ const features = {
   title: 'Why choose SukiSU-Ultra',
   description: 'Built from the ground up with security, performance, and reliability at its core.',
   items: [
+    {
+      title: 'LKM install',
+      body: "Install as a Loadable Kernel Module. The Manager patches your boot image with a prebuilt module for your device's KMI, so no kernel build is needed.",
+      icon: 'solar:cpu-bolt-outline'
+    },
     {
       title: 'Non-GKI kernel support',
       body: 'Non-GKI/Pre-GKI kernel support from 4.x - 5.4 with LTS mode (3.x is experimental).',
@@ -63,19 +69,24 @@ const features = {
       icon: 'solar:download-bold'
     },
     {
-      title: 'Design it your way',
-      body: 'Extensive customisation: custom background, managing some SUSFS features without the susfsforksu module, adjusting DPI, and more.',
+      title: 'App Profile',
+      body: 'Control root per app: groups, capabilities, SELinux domain, mount namespace, and reusable templates.',
+      icon: 'solar:shield-user-outline'
+    },
+    {
+      title: 'Make it yours',
+      body: 'Monet colors, accent colour, Material or Miuix interface style, blur, liquid glass and page scale.',
       icon: 'tabler:brush'
     },
     {
       title: 'WebUI X',
-      body: 'Next-generation WebUI implementation by MMRL is supported.',
+      body: "Module WebUI based on MMRL's WebUI-X-Portable.",
       icon: 'arcticons:mmrl'
     },
     {
-      title: 'Frequent updates',
-      body: 'SukiSU-Ultra is constantly maintained and updated by our contributors.',
-      icon: 'solar:smartphone-update-bold-duotone'
+      title: 'Jailbreak mode',
+      body: 'Gain root with Magica when the device boots with permissive SELinux, with optional automatic jailbreak on boot.',
+      icon: 'solar:lock-unlocked-outline'
     }
   ]
 }
@@ -134,7 +145,7 @@ const footer = {
 
 <LandingPage
   :hero="hero"
-  :demo="demo"
+  :overview="overview"
   :features="features"
   :community="community"
   :banner="banner"
