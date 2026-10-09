@@ -16,7 +16,31 @@ Before you begin, ensure you have the following:
 
 There are several ways to install SukiSU-Ultra, depending on your device and preference.
 
-### Method 1: Using Pre-built GKI Packages
+### Method 1: LKM via the Manager (Recommended)
+
+LKM mode installs SukiSU-Ultra as a Loadable Kernel Module. The Manager patches your boot image with a prebuilt module that matches your device's KMI, so you do not need to build a kernel.
+
+#### Steps:
+
+1.  **Install the Manager**: Download the latest `SukiSU_*.apk` from the [GitHub releases](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases) and install it.
+2.  **Start the installer**: On the home screen, tap the install card (**Tap to install**).
+3.  **Choose how to provide the boot image**:
+    -   **Direct install (Recommended)**.
+    -   **Select a file and patch**: pick a boot image. The Manager recommends the image of the partition that applies to your device (`boot`, `init_boot` or `vendor_boot`). If you enable **Backup as stock image**, make sure the image you picked is a stock image.
+    -   **Download a file and patch**: enter the URL of a full OTA image or a factory image. The Manager looks for a `boot`, `init_boot` or `vendor_boot` partition inside it.
+    -   **Use local LKM file**: use your own module instead of the bundled one. Only `.ko` files are supported.
+4.  **Select the KMI**: the Manager shows the KMI of your device (*KMI version of this device*). Pick the matching one if you are asked.
+5.  **Flash and reboot.**
+
+::: tip Prebuilt LKM images
+Release builds ship prebuilt modules for these KMIs (each for aarch64 and x86_64): `android12-5.10`, `android13-5.10`, `android13-5.15`, `android14-5.15`, `android14-6.1`, `android15-6.6`, `android16-6.12` and `android17-6.18`. See the [latest release](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases/latest) for the current list.
+:::
+
+::: warning Jailbreak mode
+In **Jailbreak mode**, flashing a partition on a device with a locked bootloader breaks AVB (Android Verified Boot) and may leave the device unable to boot.
+:::
+
+### Method 2: Using Pre-built GKI Packages
 
 This is the recommended method for devices with Generic Kernel Image (GKI) 2.0, such as many Xiaomi, Redmi, and Samsung models.[^1]
 
@@ -40,7 +64,7 @@ This is the recommended method for devices with Generic Kernel Image (GKI) 2.0, 
 The `.zip` archive without a suffix is uncompressed. The `.gz` suffix indicates compression used for specific models.
 :::
 
-### Method 2: Custom Build for OnePlus Devices
+### Method 3: Custom Build for OnePlus Devices
 
 For OnePlus devices, you'll need to create a custom build.
 
@@ -57,7 +81,7 @@ For OnePlus devices, you'll need to create a custom build.
     - [ ] Flash the zip file.
     - [ ] Reboot and verify the installation.
 
-### Method 3: Manual Kernel Integration (Advanced)
+### Method 4: Manual Kernel Integration (Advanced)
 
 This method is for advanced users who are building a kernel from source.
 
@@ -90,7 +114,7 @@ To keep root access after an Over-the-Air (OTA) update, follow these steps ==bef
     - [ ] Select your `AnyKernel3` kernel zip file.
     - [ ] Choose to install it to the inactive slot.
     - [ ] Once flashed, you can safely reboot.
-2.  **Alternative: LKM Mode**: You can also use LKM mode to install to the unused slot after an OTA.
+2.  **LKM mode (recommended)**: after the OTA has been installed and before you reboot, start the Manager's installer from [Method 1](#method-1-lkm-via-the-manager-recommended) and choose **Install to inactive slot (After OTA)**.
 
 ::: tip
 For non-GKI devices, the safest method to retain root after an OTA is to use TWRP to flash the kernel again.

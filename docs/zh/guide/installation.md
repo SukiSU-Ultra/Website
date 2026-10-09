@@ -9,6 +9,30 @@
 请务必在继续之前创建完整备份，阅读文档确保与您的设备兼容，遵循文档参考，准备好恢复计划
 :::
 
+## LKM 安装
+
+LKM 模式将 SukiSU-Ultra 作为可加载内核模块 (LKM) 安装。管理器会用与你设备 KMI 匹配的预构建模块修补 boot 镜像，因此无需自行编译内核。**推荐优先使用这种方式。**
+
+### 步骤：
+
+1. **安装管理器**：从 [GitHub Releases](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases) 下载最新的 `SukiSU_*.apk` 并安装。
+2. **开始安装**：在主页点击安装卡片（**点击安装**）。
+3. **选择提供 boot 镜像的方式**：
+   - **直接安装（推荐）**。
+   - **选择文件并修补**：选择一个 boot 镜像。管理器会推荐适用于你设备的分区镜像（`boot`、`init_boot` 或 `vendor_boot`）。若启用**备份为原厂镜像**，请确保所选镜像是原厂镜像。
+   - **下载文件并修补**：输入完整 OTA 包或出厂镜像的 URL，管理器会在其中查找 `boot`、`init_boot` 或 `vendor_boot` 分区。
+   - **使用本地 LKM 文件**：使用你自己的模块，而不是内置的模块。仅支持 `.ko` 文件。
+4. **选择 KMI**：管理器会显示你设备的 KMI（*本设备 KMI 版本*），如被询问请选择匹配的一项。
+5. **刷入并重启。**
+
+::: tip 预构建 LKM 镜像
+发布版本提供以下 KMI 的预构建模块（均有 aarch64 与 x86_64）：`android12-5.10`、`android13-5.10`、`android13-5.15`、`android14-5.15`、`android14-6.1`、`android15-6.6`、`android16-6.12`、`android17-6.18`。最新列表请见[最新发布](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases/latest)。
+:::
+
+::: warning 越狱模式
+在**越狱模式**下，对已锁定 Bootloader 的设备刷写分区会破坏 AVB（Android 验证启动），可能导致设备无法开机。
+:::
+
 ## 通用 GKI
 
 请**全部**参考 [KernelSU 安装指南](https://kernelsu.org/zh_CN/guide/installation.html)
@@ -112,7 +136,7 @@ curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kern
 
 3. 替代方案：LKM 模式
 
-   使用 [LKM 模式](#通用-gki) 在 OTA 后安装到未使用的插槽。
+   使用 [LKM 模式](#lkm-安装)（推荐）在 OTA 后、重启前，选择**安装到未使用的槽位（OTA 后）** 安装到未使用的插槽。
 
 ::: warning 警告
 **非 GKI 设备注意事项：** 此方法不支持所有非 GKI 设备。对于非 GKI 设备，使用 TWRP 是最安全的方法。
