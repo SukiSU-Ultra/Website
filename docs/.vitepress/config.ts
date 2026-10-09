@@ -235,6 +235,8 @@ export default defineConfig({
                             {text: 'Installation', link: '/guide/installation'},
                             {text: 'Compatibility', link: '/guide/compatibility'},
                             {text: 'Links', link: '/guide/links'},
+                            {text: 'App Profile', link: '/guide/app-profile'},
+                            {text: 'Troubleshooting', link: '/guide/troubleshooting'},
                             {text: 'License', link: '/guide/license'}
                         ]
                     },
@@ -251,6 +253,8 @@ export default defineConfig({
                                     {text: 'Installation', link: '/guide/installation'},
                                     {text: 'Compatibility', link: '/guide/compatibility'},
                                     {text: 'Links', link: '/guide/links'},
+                                    {text: 'App Profile', link: '/guide/app-profile'},
+                                    {text: 'Troubleshooting', link: '/guide/troubleshooting'},
                                     {text: 'License', link: '/guide/license'}
                                 ]
                             }
@@ -258,7 +262,7 @@ export default defineConfig({
                     }
                 },
                 editLink: {
-                    pattern: 'https://github.com/sukisu-ultra/sukisu-ultra/edit/main/docs/:path',
+                    pattern: 'https://github.com/SukiSU-Ultra/Website/edit/main/docs/:path',
                     text: 'Edit this page on GitHub',
                 },
                 docFooter: {
@@ -288,6 +292,8 @@ export default defineConfig({
                             {text: '集成', link: '/zh/guide/how-to-integrate'},
                             {text: '兼容性', link: '/zh/guide/compatibility'},
                             {text: '链接', link: '/zh/guide/links'},
+                            {text: 'App Profile', link: '/zh/guide/app-profile'},
+                            {text: '疑难解答', link: '/zh/guide/troubleshooting'},
                             {text: '许可', link: '/zh/guide/license'},
                         ]
                     },
@@ -305,6 +311,8 @@ export default defineConfig({
                                     { text: '集成', link: '/guide/how-to-integrate'},
                                     { text: '兼容性', link: '/guide/compatibility' },
                                     { text: '链接', link: '/guide/links' },
+                                    { text: 'App Profile', link: '/guide/app-profile' },
+                                    { text: '疑难解答', link: '/guide/troubleshooting' },
                                     { text: '许可', link: '/guide/license' },
                                 ]
                             }
@@ -312,7 +320,7 @@ export default defineConfig({
                     }
                 },
                 editLink: {
-                    pattern: 'https://github.com/sukisu-ultra/sukisu-ultra/edit/main/docs/:path',
+                    pattern: 'https://github.com/SukiSU-Ultra/Website/edit/main/docs/:path',
                     text: '在 GitHub 上编辑此页面',
                 },
                 docFooter: {
