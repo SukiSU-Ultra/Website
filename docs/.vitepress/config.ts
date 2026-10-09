@@ -233,6 +233,7 @@ export default defineConfig({
                         items: [
                             {text: 'Introduction', link: '/guide/'},
                             {text: 'Installation', link: '/guide/installation'},
+                            {text: 'Integration', link: '/guide/how-to-integrate'},
                             {text: 'Compatibility', link: '/guide/compatibility'},
                             {text: 'Links', link: '/guide/links'},
                             {text: 'App Profile', link: '/guide/app-profile'},
@@ -251,6 +252,7 @@ export default defineConfig({
                                 items: [
                                     {text: 'Introduction', link: '/guide/'},
                                     {text: 'Installation', link: '/guide/installation'},
+                                    {text: 'Integration', link: '/guide/how-to-integrate'},
                                     {text: 'Compatibility', link: '/guide/compatibility'},
                                     {text: 'Links', link: '/guide/links'},
                                     {text: 'App Profile', link: '/guide/app-profile'},
