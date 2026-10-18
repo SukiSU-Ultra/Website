@@ -59,11 +59,6 @@ const features = {
       icon: 'arcticons:kernelsu'
     },
     {
-      title: '基于 Magic Mount',
-      body: '得益于 5ec1cff，继承 Magisk 的 Magic Mount 机制',
-      icon: 'solar:zip-file-outline'
-    },
-    {
       title: '支持 KPM 内核模块',
       body: '移植自 APatch 的 KPM 模块支持',
       icon: 'solar:download-bold'
@@ -77,11 +72,6 @@ const features = {
       title: '随心定制',
       body: 'Monet 取色、强调色、Material / Miuix 界面风格、模糊、液态玻璃与页面缩放',
       icon: 'tabler:brush'
-    },
-    {
-      title: 'WebUI X',
-      body: '模块 WebUI，基于 MMRL 的 WebUI-X-Portable',
-      icon: 'arcticons:mmrl'
     },
     {
       title: '越狱模式',

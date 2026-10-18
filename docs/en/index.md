@@ -59,11 +59,6 @@ const features = {
       icon: 'arcticons:kernelsu'
     },
     {
-      title: 'Based on Magic Mount',
-      body: "Based on Magisk's Magic Mount, thanks to 5ec1cff.",
-      icon: 'solar:zip-file-outline'
-    },
-    {
       title: 'KPM kernel modules',
       body: 'KPM module support, ported from APatch.',
       icon: 'solar:download-bold'
@@ -77,11 +72,6 @@ const features = {
       title: 'Make it yours',
       body: 'Monet colors, accent colour, Material or Miuix interface style, blur, liquid glass and page scale.',
       icon: 'tabler:brush'
-    },
-    {
-      title: 'WebUI X',
-      body: "Module WebUI based on MMRL's WebUI-X-Portable.",
-      icon: 'arcticons:mmrl'
     },
     {
       title: 'Jailbreak mode',

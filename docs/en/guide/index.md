@@ -11,9 +11,6 @@ SukiSU-Ultra is a modern, secure, and powerful root solution designed specifical
 ### 🔒 Kernel-based su and root access management
 Secure root access management at the kernel level, providing better security and performance compared to traditional solutions.
 
-### 🚫 Not based on OverlayFS module system
-Built on Magic Mount technology from 5ec1cff, offering a more stable and reliable foundation.
-
 ### 📱 App Profile
 Advanced application profiling system that allows you to lock root privileges in a controlled environment.
 

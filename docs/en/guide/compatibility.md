@@ -20,4 +20,5 @@ Currently supports the following processor architectures:
 |-------------|---------------|-------|
 | **arm64-v8a** | ✅ Full Support | Primary target architecture |
 | **armeabi-v7a** | ✅ Basic Support | Bare minimum functionality |
+| **Riscv64** | 🟡 Partial Support | Some devices supported |
 | **X86_64** | 🟡 Partial Support | Some devices supported |
