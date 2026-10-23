@@ -3,10 +3,10 @@
 ## 🌐 Translation & Localization
 
 ::: info Contribute Translations
-If you need to submit a translation for the manager, please visit our Crowdin project
+If you need to submit a translation for the manager, or improve existing translations, please visit our Weblate project.
 :::
 
-**Translation Platform:** [Crowdin - SukiSU-Ultra](https://crowdin.com/project/SukiSU-Ultra)
+**Translation Platform:** [Weblate - SukiSU-Ultra](https://hosted.weblate.org/projects/sukisu-ultra/)
 
 ## 🔧 Projects & Builds
 

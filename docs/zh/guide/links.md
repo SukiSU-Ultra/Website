@@ -3,10 +3,10 @@
 ## 参与翻译
 
 ::: info 贡献翻译
-如果您需要为管理器提交翻译，请访问我们的 Crowdin 项目
+如果您需要为管理器提交翻译，或者完善现有的翻译，请访问我们的 Weblate 项目。
 :::
 
-**翻译平台：** [Crowdin - SukiSU-Ultra](https://crowdin.com/project/SukiSU-Ultra)
+**翻译平台：** [Weblate - SukiSU-Ultra](https://hosted.weblate.org/projects/sukisu-ultra/)
 
 ## 项目与构建
 
