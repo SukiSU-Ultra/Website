@@ -17,14 +17,16 @@
 集成 KernelSU 和 SUSFS 的通用内核映像构建
 :::
 
-**仓库：** [GKI_KernelSU_SUSFS](https://github.com/ShirkNeko/GKI_KernelSU_SUSFS)
+**仓库：** [GKI_KernelSU_SUSFS](https://github.com/ShirkNeko/GKI_KernelSU_SUSFS) 或 [GKI_KernelSU_SUSFS](https://github.com/WildKernels/GKI_KernelSU_SUSFS)
 
 ### OnePlus 构建
 ::: tip 设备特定构建
-带有 MKSU 和 SUSFS 的自动化 OnePlus 内核构建
+带有 MKSU 和 SUSFS 的自动化 OnePlus 内核构建。
 :::
 
-**仓库：** [Action_OnePlus_MKSU_SUSFS](https://github.com/ShirkNeko/Action_OnePlus_MKSU_SUSFS)
+**仓库：** [Action-Build](https://github.com/Numbersf/Action-Build) · 由 [Numbersf](https://github.com/Numbersf) 维护
+
+> 原项目已弃用。
 
 ## 社区与支持
 

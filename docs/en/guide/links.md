@@ -17,14 +17,16 @@ Projects compiled based on Sukisu and susfs:
 Generic Kernel Image builds with KernelSU and SUSFS integration
 :::
 
-**Repository:** [GKI_KernelSU_SUSFS](https://github.com/ShirkNeko/GKI_KernelSU_SUSFS)
+**Repository:** [GKI_KernelSU_SUSFS](https://github.com/ShirkNeko/GKI_KernelSU_SUSFS) Or [GKI_KernelSU_SUSFS](https://github.com/WildKernels/GKI_KernelSU_SUSFS)
 
 ### OnePlus Builds
-::: tip Device-Specific Builds
-Automated OnePlus kernel builds with MKSU and SUSFS
+::: tip Device-specific builds
+Automated OnePlus kernel builds with MKSU and SUSFS.
 :::
 
-**Repository:** [Action_OnePlus_MKSU_SUSFS](https://github.com/ShirkNeko/Action_OnePlus_MKSU_SUSFS)
+**Repository:** [Action-Build](https://github.com/Numbersf/Action-Build) · Maintained by [Numbersf](https://github.com/Numbersf)
+
+> The original project is deprecated.
 
 ## 📱 Community & Support
 
